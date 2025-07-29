@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node slides.md",
     "dev": "slidev",
-    "build": "slidev build",
+    "build": "npx slidev build slides.md",
     "export": "slidev export"
   },
   "dependencies": {
