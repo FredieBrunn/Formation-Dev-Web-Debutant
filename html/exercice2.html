@@ -3,43 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Sémantique</title>
+    <title>Mon Blog Personnel - Développement Web</title>
+    <meta name="description" content="Blog personnel sur le développement web et les technologies">
 </head>
 <body>
-    <header>
-        <h1>Mon Blog Tech</h1>
-        <nav>
+    <header class="site-header">
+        <h1>DevBlog</h1>
+        <nav class="main-navigation" role="navigation">
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#accueil" aria-current="page">Accueil</a></li>
                 <li><a href="#articles">Articles</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main>
-        <section id="articles">
-            <h2>Derniers Articles</h2>
-            <article>
-                <header>
-                    <h3>Les Nouveautés JavaScript</h3>
-                    <time datetime="2025-01-01">1er janvier 2025</time>
+
+    <main class="site-content">
+        <section id="articles" class="articles-section">
+            <h2>Articles Récents</h2>
+            
+            <article class="blog-article">
+                <header class="article-header">
+                    <h3><a href="#article1">Introduction à HTML5 Sémantique</a></h3>
+                    <time datetime="2024-01-15">15 janvier 2024</time>
                 </header>
-                <p>Découvrez les dernières fonctionnalités...</p>
-                <footer>
-                    <p>Par <address>Jean Dupont</address></p>
+                <p>Découvrez les nouveautés HTML5 qui révolutionnent la structure des pages web...</p>
+                <footer class="article-footer">
+                    <a href="#article1" class="read-more">Lire la suite</a>
+                </footer>
+            </article>
+
+            <article class="blog-article">
+                <header class="article-header">
+                    <h3><a href="#article2">CSS Grid vs Flexbox</a></h3>
+                    <time datetime="2024-01-10">10 janvier 2024</time>
+                </header>
+                <p>Comparaison détaillée des deux systèmes de mise en page CSS modernes...</p>
+                <footer class="article-footer">
+                    <a href="#article2" class="read-more">Lire la suite</a>
                 </footer>
             </article>
         </section>
-        
-        <aside>
-            <h3>À propos</h3>
-            <p>Blog dédié aux technologies web...</p>
+
+        <aside class="sidebar">
+            <section class="about-section">
+                <h3>À Propos</h3>
+                <p>Développeur passionné, je partage mes découvertes en développement web moderne.</p>
+            </section>
+            
+            <section class="archives-section">
+                <h3>Archives</h3>
+                <ul>
+                    <li><a href="#janvier-2024">Janvier 2024 (2)</a></li>
+                    <li><a href="#decembre-2023">Décembre 2023 (5)</a></li>
+                </ul>
+            </section>
         </aside>
     </main>
-    
-    <footer>
-        <p>&copy; 2025 Mon Blog Tech</p>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 DevBlog. Tous droits réservés.</p>
+        <nav class="social-links">
+            <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
     </footer>
 </body>
 </html>
