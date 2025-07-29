@@ -1,4 +1,5 @@
 ---
+
 theme: seriph
 background: https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080
 class: 'text-center'
@@ -11,6 +12,7 @@ info: |
 drawings:
   persist: false
 css: unocss
+
 ---
 
 # Les Bases du Développement Web
