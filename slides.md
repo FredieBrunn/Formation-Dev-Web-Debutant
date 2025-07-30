@@ -437,11 +437,31 @@ Quand on arrive a avoir un tableau de grande taille, il devient moins évident a
 
 <i>Note: Elles doivent apparaitre dans l'ordre suivant: `<thead>`, `<tfoot>` et `<tbody>`</i>
 ---
+layout: two-cols
+---
 
 ## 📝 Exercice 5
 Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
 ![Aperçu de l'exercice](./images/tableau.png)
+
+::right::
+
+![Appercu de l'exercice](./images/tableau2.png)
+
+---
+
+## 🎯 Exercice Pratique
+
+Créez une page HTML5 permettant d'afficher :
+![Appercu de l'exercice](./images/tableau2.png)
+
+### Critères d'évaluation :
+- ✅ Structure HTML5 valide
+- ✅ Utilisation correcte des éléments sémantiques
+- ✅ Métadonnées appropriées
+
+**Temps estimé : 10 minutes**
 
 ---
 
