@@ -759,9 +759,7 @@ Créez deux formulaires pour comprendre la différence entre GET et POST :
 
 # Champs de Saisie `<input>`
 L'élément `<input>` est polyvalent et change de comportement selon son attribut `type`.
-
 ## 🎛️ Syntaxe de base
-
 ```html
 <input type="type" name="nom" id="identifiant">
 ```
@@ -798,6 +796,19 @@ L'élément `<input>` est polyvalent et change de comportement selon son attribu
 | `button` | Bouton simple |
 ---
 
+---
+
+## 📝 Types d'input principaux(Suite)
+
+| Type | Usage |
+|------|-------|
+| `radio` | Bouton radio |
+| `file` | Fichier |
+| `submit` | Bouton d'envoi |
+| `reset` | Bouton de renitialisation |
+| `button` | Bouton simple |
+---
+
 ## Types de Texte
 
 Les différents types de champs texte et leurs spécificités.
@@ -808,14 +819,11 @@ Les différents types de champs texte et leurs spécificités.
 <!-- Champ texte basique -->
 <label for="nom">Nom :</label>
 <input type="text" id="nom" name="nom">
-
 <!-- Avec valeur par défaut -->
 <input type="text" name="ville" value="Paris">
-
 <!-- Avec placeholder -->
 <input type="text" name="prenom" 
        placeholder="Entrez votre prénom">
-
 <!-- Avec contraintes -->
 <input type="text" name="pseudo" 
        minlength="3" maxlength="20"
@@ -992,6 +1000,24 @@ Créez un formulaire d'inscription utilisant différents types d'input :
 - Placeholders informatifs
 - Validation HTML5 appropriée
 
+---
+
+# Cases à Cocher (`checkbox`)
+
+Les checkboxes permettent de sélectionner une ou plusieurs options.
+```html
+<!-- Checkbox simple -->
+<input type="checkbox" id="newsletter" name="newsletter">
+<label for="newsletter">S'abonner à la newsletter</label>
+
+<!-- Checkbox cochée par défaut -->
+<input type="checkbox" id="conditions" name="conditions" checked>
+<label for="conditions">J'accepte les conditions</label>
+
+<!-- Checkbox obligatoire -->
+<input type="checkbox" id="rgpd" name="rgpd" required>
+<label for="rgpd">J'accepte la politique de confidentialité *</label>
+```
 ---
 
 # 1.7 TP Partie 1 - Site Portfolio
