@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription Complet</title>
+</head>
+<body>
+    
+    <h1>Inscription</h1>
+    
+    <form action="inscription.php" method="post">
+        
+        <!-- Prénom (text, obligatoire) -->
+        <label for="prenom">Prénom * :</label>
+        <input type="text" id="prenom" name="prenom" 
+               required placeholder="Entrez votre prénom">
+        <br><br>
+        
+        <!-- Email (email, obligatoire) -->
+        <label for="email">Adresse email * :</label>
+        <input type="email" id="email" name="email" 
+               required placeholder="exemple@email.com">
+        <br><br>
+        
+        <!-- Mot de passe (password, min 8 caractères) -->
+        <label for="password">Mot de passe * :</label>
+        <input type="password" id="password" name="password" 
+               required minlength="8" 
+               placeholder="8 caractères minimum">
+        <br><br>
+        
+        <!-- Téléphone (tel, format français) -->
+        <label for="telephone">Téléphone * :</label>
+        <input type="tel" id="telephone" name="telephone" 
+               required pattern="0[1-9][0-9]{8}" 
+               placeholder="0123456789"
+               title="Format: 0123456789">
+        <br><br>
+        
+        <!-- Site web (url, optionnel) -->
+        <label for="site">Site web :</label>
+        <input type="url" id="site" name="site" 
+               placeholder="https://monsite.com">
+        <br><br>
+        
+        <!-- Âge (number, 16-99 ans) -->
+        <label for="age">Âge * :</label>
+        <input type="number" id="age" name="age" 
+               required min="16" max="99" 
+               placeholder="Votre âge">
+        <br><br>
+        
+        <!-- Date de naissance -->
+        <label for="naissance">Date de naissance * :</label>
+        <input type="date" id="naissance" name="naissance" 
+               required max="2008-12-31">
+        <br><br>
+        
+        <!-- Heure préférée -->
+        <label for="heure">Heure de contact préférée :</label>
+        <input type="time" id="heure" name="heure" 
+               value="14:00">
+        <br><br>
+        
+        <!-- Bouton de soumission -->
+        <button type="submit">S'inscrire</button>
+        
+    </form>
+    
+    <p><em>* Champs obligatoires</em></p>
+    
+</body>
+</html>

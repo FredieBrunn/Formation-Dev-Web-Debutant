@@ -447,14 +447,530 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
 # 1.5 Formulaires HTML
 
-## A quoi servent-ils ?
-Les formulaires servent a envoyer des données au serveur, données rempli en general par un visiteur que ce soit sur l'inscription sur un site ou un formulaire de contact. Elles sont dotés de divers controles comme:
+## Qu'est-ce qu'un formulaire ?
+Un formulaires permet de collecter des informations saisies par l'utilisateur et de les envoyer à un serveur pour traitement.Elles sont dotés de divers controles comme:
 - des champs de saisie,
 - des boutons
 - listes
 - ...
 
-qui permettent aux visiteurs d'interagir avec la page qu'il est entrain de consulter
+---
+
+## 🏗️ Structure générale
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Formulaire</title>
+</head>
+<body>
+    <form>
+        <!-- Éléments du formulaire -->
+        <input type="text" name="nom">
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>
+```
+<p>
+  <strong>💡 À retenir :</strong> Un formulaire est un conteneur qui regroupe des éléments interactifs pour collecter des données utilisateur.
+</p>
+
+---
+
+# Anatomie d'un Formulaire
+Découvrons les composants essentiels d'un formulaire HTML.
+
+```html
+<form action="/traitement.php" method="post">
+    <!-- 1. Étiquette -->
+    <label for="nom">Votre nom :</label>
+    
+    <!-- 2. Champ de saisie -->
+    <input type="text" id="nom" name="nom">
+    
+    <!-- 3. Bouton d'envoi -->
+    <button type="submit">Envoyer</button>
+</form>
+```
+
+### Rôles des éléments :
+- **`<form>`** : Conteneur principal
+- **`<label>`** : Étiquette descriptive
+- **`<input>`** : Champ de saisie
+- **`<button>`** : Bouton d'action
+---
+
+## ⚙️ Attributs importants
+
+### Élément `<form>`
+- **`action`** : URL de destination des données
+- **`method`** : Méthode d'envoi (GET/POST)
+
+### Élément `<input>`
+- **`type`** : Type de champ (text, email, date, number, time,...)
+- **`name`** : Nom du champ pour le serveur
+- **`id`** : Identifiant unique
+
+### Élément `<label>`
+- **`for`** : Lie l'étiquette au champ (même valeur que l'`id`)
+
+---
+layout: two-cols
+---
+
+## 📝 Exercice 6 
+Créez votre premier formulaire HTML simple :
+
+### Objectifs :
+1. Créer un fichier `exercice6.html`
+2. Ajouter un formulaire avec :
+   - Un champ "Prénom"
+   - Un champ "Nom de famille"
+   - un champ "Email"
+   - Un bouton "Valider"
+3. Utiliser les bonnes pratiques :
+   - Associer les labels aux inputs
+   - Définir les attributs `name` et `id`
+::right::
+
+### ✅ À faire
+
+1. **Créer** le fichier HTML avec la structure de base
+2. **Ajouter** le formulaire avec les champs demandés
+3. **Vérifier** que vous pouvez saisir du texte et cliquer sur le bouton
+---
+layout: two-cols
+---
+
+## L'élément `<form>` et ses Attributs
+L'élément `<form>` est le conteneur principal qui définit comment les données seront envoyées.
+
+### `action` - Destination des données
+```html
+<!-- Envoie vers un fichier PHP -->
+<form action="traitement.php">
+
+<!-- Envoie vers une URL complète -->
+<form action="https://exemple.com/contact">
+
+<!-- Envoie vers la même page (par défaut) -->
+<form action="">
+<form> <!-- Sans action = même page -->
+```
+
+::right::
+
+### `method` - Méthode d'envoi
+```html
+<!-- GET : données visibles dans l'URL -->
+<form method="get">
+
+<!-- POST : données cachées (recommandé) -->
+<form method="post">
+```
+
+### `name` - Nom du formulaire
+```html
+<form name="contact" action="traitement.php">
+```
+
+### `target` - Fenêtre de destination
+```html
+<!-- Ouvre dans une nouvelle fenêtre -->
+<form target="_blank">
+
+<!-- Ouvre dans la même fenêtre (défaut) -->
+<form target="_self">
+```
+
+---
+layout: two-cols
+---
+# Différence entre GET et POST
+
+Comprendre les méthodes d'envoi est crucial pour bien utiliser les formulaires.
+
+## 📤 Méthode GET
+
+Les valeurs envoyes en `GET` passent par l'URL
+
+```html
+<form action="recherche.php" method="get">
+    <label for="motcle">Rechercher :</label>
+    <input type="text" id="motcle" name="q">
+    <button type="submit">Chercher</button>
+</form>
+```
+
+
+**Résultat dans l'URL :**
+```
+https://exemple.com/recherche.php?q=formation
+```
+
+::right::
+### ✅ Avantages :
+- URL partageable
+- Résultat mis en favoris
+- Navigation avec boutons précédent/suivant
+
+### ❌ Inconvénients :
+- Données visibles dans l'URL
+- Limite de longueur (~2000 caractères)
+- Pas sécurisé pour données sensibles
+
+---
+layout: two-cols
+---
+
+## 📨 Méthode POST
+
+```html
+<form action="inscription.php" method="post">
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email">
+    
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password">
+    
+    <button type="submit">S'inscrire</button>
+</form>
+```
+**Les données sont envoyées de manière cachée**
+
+::right::
+
+### ✅ Avantages :
+- Données cachées dans l'URL
+- Pas de limite de taille
+- Plus sécurisé
+- Permet l'envoi de fichiers
+
+### ❌ Inconvénients :
+- URL non partageable
+- Pas de favoris possible
+- Actualisation = renvoi des données
+
+---
+
+# Quand utiliser GET ou POST ?
+
+## 🔍 Utilisez GET pour :
+
+- **Recherche** : Moteurs de recherche
+- **Filtres** : Tri de produits
+- **Navigation** : Pagination
+- **Consultation** : Affichage de données
+
+```html
+<!-- Formulaire de recherche -->
+<form action="recherche.php" method="get">
+    <input type="search" name="q" placeholder="Rechercher...">
+    <button type="submit">🔍</button>
+</form>
+
+<!-- Filtre de produits -->
+<form method="get">
+    <select name="categorie">
+        <option value="tous">Tous</option>
+        <option value="vetements">Vêtements</option>
+    </select>
+    <button type="submit">Filtrer</button>
+</form>
+```
+
+---
+
+## 📝 Utilisez POST pour :
+
+- **Inscription/Connexion** : Données sensibles
+- **Contact** : Messages privés
+- **Commandes** : Informations personnelles
+- **Upload** : Envoi de fichiers
+
+```html
+<!-- Formulaire de contact -->
+<form action="contact.php" method="post">
+    <input type="email" name="email" required>
+    <textarea name="message" required></textarea>
+    <button type="submit">Envoyer</button>
+</form>
+
+<!-- Upload de fichier -->
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="photo">
+    <button type="submit">Télécharger</button>
+</form>
+```
+
+---
+layout: two-cols
+---
+
+## 📝 Exercice 7 : Formulaires GET et POST
+Créez deux formulaires pour comprendre la différence entre GET et POST :
+
+### Formulaire 1 - Recherche
+- Champ de recherche
+- Bouton "Rechercher"
+- Action vers `recherche.php`
+
+### Formulaire 2 - Contact
+- Champ "Nom"
+- Champ "Email"
+- Zone de "Message"
+- Bouton "Envoyer"
+- Action vers `contact.php`
+
+::right::
+
+## 🎯 Travail a Faire
+
+1. **Créer** `exercice7.html`
+2. **Implémenter** les deux formulaires
+3. **Tester** en remplissant les champs
+4. **Observer** la différence dans l'URL après soumission
+5. **Comprendre** quand utiliser chaque méthode
+
+---
+
+# Champs de Saisie `<input>`
+L'élément `<input>` est polyvalent et change de comportement selon son attribut `type`.
+
+## 🎛️ Syntaxe de base
+
+```html
+<input type="type" name="nom" id="identifiant">
+```
+
+### Attributs essentiels :
+- **`type`** : Définit le type de champ
+- **`name`** : Nom du champ (côté serveur)
+- **`id`** : Identifiant unique (pour `<label>`)
+
+### Attributs optionnels :
+- **`value`** : Valeur par défaut
+- **`placeholder`** : Texte d'aide
+- **`required`** : Champ obligatoire
+- **`disabled`** : Champ désactivé
+- **`readonly`** : Lecture seule
+---
+
+## 📝 Types d'input principaux
+
+| Type | Usage |
+|------|-------|
+| `text` | Texte simple |
+| `email` | Adresse email |
+| `password` | Mot de passe |
+| `number` | Nombre |
+| `tel` | Téléphone |
+| `url` | URL |
+| `date` | Date |
+| `checkbox` | Case à cocher |
+| `radio` | Bouton radio |
+| `file` | Fichier |
+| `submit` | Bouton d'envoi |
+| `reset` | Bouton de renitialisation |
+| `button` | Bouton simple |
+---
+
+## Types de Texte
+
+Les différents types de champs texte et leurs spécificités.
+
+### 📝 Type `text` - Texte simple
+
+```html
+<!-- Champ texte basique -->
+<label for="nom">Nom :</label>
+<input type="text" id="nom" name="nom">
+
+<!-- Avec valeur par défaut -->
+<input type="text" name="ville" value="Paris">
+
+<!-- Avec placeholder -->
+<input type="text" name="prenom" 
+       placeholder="Entrez votre prénom">
+
+<!-- Avec contraintes -->
+<input type="text" name="pseudo" 
+       minlength="3" maxlength="20"
+       placeholder="3 à 20 caractères">
+```
+
+### ✨ Attributs spécifiques :
+- `minlength` / `maxlength` : Longueur min/max
+- `pattern` : Expression régulière
+- `autocomplete` : Autocomplétion
+
+---
+
+## 📧 Type `email` - Adresse email
+
+```html
+<!-- Email simple -->
+<label for="email">Email :</label>
+<input type="email" id="email" name="email">
+
+<!-- Email obligatoire -->
+<input type="email" name="email" required
+       placeholder="votre@email.com">
+
+<!-- Plusieurs emails -->
+<input type="email" name="emails" multiple
+       placeholder="email1@test.com, email2@test.com">
+```
+
+## 🔔 Type `tel` - Téléphone
+
+```html
+<!-- Téléphone -->
+<label for="tel">Téléphone :</label>
+<input type="tel" id="tel" name="telephone">
+
+<!-- Avec pattern pour format français -->
+<input type="tel" name="tel" 
+       pattern="0[1-9][0-9]{8}"
+       placeholder="0123456789">
+```
+
+---
+
+# Types Spécialisés
+Découvrons les types d'input plus spécifiques.
+
+## 🔒 Type `password` - Mot de passe
+
+```html
+<!-- Mot de passe simple -->
+<label for="password">Mot de passe :</label>
+<input type="password" id="password" name="password">
+
+<!-- Avec contraintes -->
+<input type="password" name="password"
+       minlength="8" required
+       placeholder="8 caractères minimum">
+
+<!-- Confirmation -->
+<label for="confirm">Confirmer :</label>
+<input type="password" id="confirm" name="confirm">
+```
+
+## 🌐 Type `url` - URL
+
+```html
+<!-- URL simple -->
+<input type="url" name="site" 
+       placeholder="https://monsite.com">
+
+<!-- URL obligatoire -->
+<input type="url" name="portfolio" required>
+```
+
+---
+
+## 🔢 Type `number` - Nombre
+
+```html
+<!-- Nombre simple -->
+<label for="age">Âge :</label>
+<input type="number" id="age" name="age">
+
+<!-- Avec limites -->
+<input type="number" name="note" 
+       min="0" max="20" step="0.5"
+       placeholder="Note sur 20">
+
+<!-- Quantité -->
+<input type="number" name="quantite" 
+       min="1" value="1">
+```
+
+## 🔍 Type `search` - Recherche
+
+```html
+<!-- Champ de recherche -->
+<input type="search" name="q" 
+       placeholder="Rechercher...">
+
+<!-- Avec autocomplete -->
+<input type="search" name="recherche"
+       autocomplete="on">
+```
+
+---
+
+# Types de Date et Heure
+
+HTML5 offre plusieurs types pour gérer les dates et heures.
+
+## 📅 Dates
+
+```html
+<!-- Date complète -->
+<label for="naissance">Date de naissance :</label>
+<input type="date" id="naissance" name="naissance">
+
+<!-- Avec limites -->
+<input type="date" name="reservation"
+       min="2024-01-01" max="2024-12-31">
+
+<!-- Mois uniquement -->
+<label for="mois">Mois :</label>
+<input type="month" id="mois" name="mois">
+
+<!-- Semaine -->
+<label for="semaine">Semaine :</label>
+<input type="week" id="semaine" name="semaine">
+```
+
+---
+
+## ⏰ Heures
+
+```html
+<!-- Heure -->
+<label for="heure">Heure :</label>
+<input type="time" id="heure" name="heure">
+
+<!-- Avec valeur par défaut -->
+<input type="time" name="rendez-vous" 
+       value="09:30">
+
+<!-- Date et heure complète -->
+<label for="datetime">Date et heure :</label>
+<input type="datetime-local" id="datetime" 
+       name="datetime">
+
+<!-- Avec minimum  -->
+<input type="datetime-local" name="reservation"
+       min="2025-07-30T10:00">
+```
+
+---
+
+## 📝 Exercice 8 : Types d'Input
+Créez un formulaire d'inscription utilisant différents types d'input :
+
+### Champs à créer :
+1. **Prénom** (text, obligatoire)
+1. **Nom** (text, obligatoire)
+2. **Email** (email, obligatoire)
+3. **Mot de passe** (password, min 8 caractères)
+4. **Téléphone** (tel, format french)
+5. **Site web** (url, optionnel)
+6. **Âge** (number, 16-99 ans)
+7. **Date de naissance** (date)
+8. **Heure préférée** (time)
+
+### Contraintes :
+- Tous les champs obligatoires sauf site web
+- Placeholders informatifs
+- Validation HTML5 appropriée
 
 ---
 
