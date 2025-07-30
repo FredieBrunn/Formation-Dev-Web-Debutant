@@ -454,7 +454,7 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 ## 🎯 Exercice Pratique
 
 Créez une page HTML5 permettant d'afficher :
-![Appercu de l'exercice](./images/tableau2.png)
+![Appercu de l'exercice](./images/tableau3.png)
 
 ### Critères d'évaluation :
 - ✅ Structure HTML5 valide
