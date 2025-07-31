@@ -796,8 +796,6 @@ L'élément `<input>` est polyvalent et change de comportement selon son attribu
 | `button` | Bouton simple |
 ---
 
----
-
 ## 📝 Types d'input principaux(Suite)
 
 | Type | Usage |
@@ -877,12 +875,8 @@ Découvrons les types d'input plus spécifiques.
 <!-- Mot de passe simple -->
 <label for="password">Mot de passe :</label>
 <input type="password" id="password" name="password">
-
 <!-- Avec contraintes -->
-<input type="password" name="password"
-       minlength="8" required
-       placeholder="8 caractères minimum">
-
+<input type="password" name="password" minlength="8" required placeholder="8 caractères minimum">
 <!-- Confirmation -->
 <label for="confirm">Confirmer :</label>
 <input type="password" id="confirm" name="confirm">
@@ -894,7 +888,6 @@ Découvrons les types d'input plus spécifiques.
 <!-- URL simple -->
 <input type="url" name="site" 
        placeholder="https://monsite.com">
-
 <!-- URL obligatoire -->
 <input type="url" name="portfolio" required>
 ```
@@ -983,8 +976,8 @@ HTML5 offre plusieurs types pour gérer les dates et heures.
 
 ## 📝 Exercice 8 : Types d'Input
 Créez un formulaire d'inscription utilisant différents types d'input :
+<p><b> Champs à créer : </b></p>
 
-### Champs à créer :
 1. **Prénom** (text, obligatoire)
 1. **Nom** (text, obligatoire)
 2. **Email** (email, obligatoire)
@@ -1018,6 +1011,9 @@ Les checkboxes permettent de sélectionner une ou plusieurs options.
 <input type="checkbox" id="rgpd" name="rgpd" required>
 <label for="rgpd">J'accepte la politique de confidentialité *</label>
 ```
+
+---
+layout: two-cols
 ---
 
 # 1.7 TP Partie 1 - Site Portfolio
@@ -1036,7 +1032,7 @@ Créer un site portfolio personnel avec HTML5 sémantique et accessible
 6. **Accessibilité** : ARIA, alt, navigation clavier
 7. **Validation HTML5** pour le formulaire
 
----
+::right::
 
 ### Structure attendue :
 ```
@@ -1050,12 +1046,7 @@ portfolio/
 └── README.md
 ```
 
-**Temps alloué : 2 heures**
-
-### Ressources :
-- Validateur W3C : https://validator.w3.org/
-- Images Pexels : https://www.pexels.com/
-- Guide ARIA : https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA
+**Temps alloué : 20 Mins**
 
 
 ---
