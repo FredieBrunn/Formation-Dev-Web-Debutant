@@ -274,7 +274,7 @@ Creer une page contenant :
 
 ## ✅ Corrigé
 
-[Correction de l’exercice](/html/exercice3.html){download}
+[📥 Télécharger](html/exercice3.html){download}
 
 ---
 
