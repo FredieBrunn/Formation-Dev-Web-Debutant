@@ -1,7 +1,7 @@
 ---
 theme: seriph
 background: https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080
-class: 'text-center'
+class: "text-center"
 highlighter: shiki
 lineNumbers: true
 info: |
@@ -203,6 +203,9 @@ layout: two-cols
  Realisez le visuel ci dessous
  ![Aperçu de l'exercice](./images/exercice1.png)
 
+## ✅ Corrigé
+
+[Correction de l’exercice](html/exercice1.html){download}
 ---
 layout: two-cols
 ---
@@ -268,6 +271,10 @@ Creer une page contenant :
 - un lien qui télécharge un fichier pdf
 - un lien vers votre adresse email
 - Une ancre pour aller directement a une section "Contact"
+
+## ✅ Corrigé
+
+[Correction de l’exercice](html/exercice3.html){download}
 
 ---
 
@@ -355,12 +362,16 @@ Créer une page contenant :
 - Une liste imbriquée de vos hobbies (ex: Sport → Foot, Basket / Musique → Jazz, Rap, ...)
 ![Aperçu de l'exercice](./images/listes.png)
 
+## ✅ Corrigé
+
+[Correction de l’exercice](html/exercice4.html){download}
+
 
 ---
 
 # 1.3 Exercice - Structure HTML5
 
-## 🎯 Exercice Pratique
+## 🎯 Exercice Pratique 1
 
 Créez une page HTML5 pour un restaurant avec :
 - En-tête avec nom du restaurant et navigation
@@ -376,6 +387,8 @@ Créez une page HTML5 pour un restaurant avec :
 - ✅ Navigation fonctionnelle
 
 **Temps estimé : 30 minutes**
+
+[Correction de l’exercice](html/exercicePratique.html){download}
 
 ---
 layout: two-cols
@@ -445,13 +458,21 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
 ![Aperçu de l'exercice](./images/tableau.png)
 
+## ✅ Corrigé
+
+[Correction de l’exercice](html/exercice5.html){download}
+
 ::right::
 
 ![Appercu de l'exercice](./images/tableau2.png)
 
+## ✅ Corrigé
+
+[Correction de l’exercice](html/exercice5-2.html){download}
+
 ---
 
-## 🎯 Exercice Pratique
+## 🎯 Exercice Pratique 2
 
 Créez une page HTML5 permettant d'afficher :
 ![Appercu de l'exercice](./images/tableau3.png)
@@ -561,6 +582,11 @@ Créez votre premier formulaire HTML simple :
 1. **Créer** le fichier HTML avec la structure de base
 2. **Ajouter** le formulaire avec les champs demandés
 3. **Vérifier** que vous pouvez saisir du texte et cliquer sur le bouton
+
+# Corrigé
+
+[Correction de l’exercice](html/exercice6.html){download}
+
 ---
 layout: two-cols
 ---
@@ -835,6 +861,22 @@ Les différents types de champs texte et leurs spécificités.
 
 ---
 
+## Les champs texte multilignes
+
+Si vous souhaitez que vos visiteurs puissent saisir de longs textes, comme des champs de commentaires pour des articles d'un blog par exemple, il faudra se tourner vers l'utilisation de la balise `<textarea>`.<br><br> Deux attributs sont necessaires au `<textarea>`: `rows` qui contient le nombre de lignes et `cols` le nombres de colonnes. <br>
+|  On peut tout comme le champs de texte monoligne rajouter les attributs `name`, `readonly` et `disabled`
+
+```html
+<textarea name="commentaires" cols="30" rows="10"></textarea>
+
+<textarea name="description" id="" cols="6" rows="100">Texte par defaut</textarea>
+```
+<br>
+
+| <b>Note:</b> L'attribut `maxlenght` n'existe pas sur cette balise, et pour en limiter le nombre de caractères il est possible de passer par du JavaScript.
+
+---
+
 ## 📧 Type `email` - Adresse email
 
 ```html
@@ -1011,6 +1053,289 @@ Les checkboxes permettent de sélectionner une ou plusieurs options.
 <input type="checkbox" id="rgpd" name="rgpd" required>
 <label for="rgpd">J'accepte la politique de confidentialité *</label>
 ```
+
+---
+layout: two-cols
+---
+
+## Les Listes
+<b>Les listes</b> permettent de laisser un choix aux visiteurs au meme titre que les boutons `radio` ou `cases à cocher`, mais sont plus pratiques lorsqu'il s'agit de proposer un grand nombre de choix. Elles sont introduites par la balise `<select>` qui comprend les ifferents choix sous forme de balise `<option>` dont on renseigne la valeur qui sera envoyé au serveur grace a l'attribut `value`.
+
+| <b><i>NB:</i></b> On peut suggérer une proposition par defaut en précisant l'attribut `selected` de la balise `<option>`
+
+::right::
+
+## Exemple de liste simple
+
+```html
+<select name="couleur_yeux">
+  <option value="bleu" selected="selected">Bleu</option>
+  <option value="vert">Vert</option>
+  <option value="marron">Marron</option>
+  <option value="noir">Noir</option>
+  <option value="gris">Gris</option>
+</select>
+```
+
+---
+
+## Listes a choix multiple 
+Pour pouvoir proposer plusieurs choix, comme dans les cases à cocher, il suffit de rajouter l'attribut `multiple` qui prend pour seule valeur `multiple`
+```html
+<select name="langages_preferes" multiple="multiple" size="5">
+  <option value="html">HTML</option>
+  <option value="css">CSS</option>
+  <option value="javascript">JavaScript</option>
+  <option value="python">Python</option>
+  <option value="java">Java</option>
+  <option value="csharp">C#</option>
+  <option value="php">PHP</option>
+</select>
+```
+
+| <b>Note:</b><i> Le choix multiple ne peut pas se faire sur une liste deroulante. L'attribut `size` doit etre renseigné  pour que `multiple` fonctionne.</i>
+
+---
+
+## Groupes d'options
+
+permettent de regrouper des options similaires.
+```html
+<select name="voiture">
+  <optgroup label="Allemandes">
+    <option value="bmw">BMW</option>
+  </optgroup>
+  <optgroup label="Françaises">
+    <option value="peugeot">Peugeot</option>
+  </optgroup>
+</select>
+```
+
+---
+
+# Groupage de champs
+
+La balise `<fieldset>` permet de grouper logiquement des champs de formulaires de meme nature. La balise qui va permettre de donner ce nom au groupage de champs est `<legend>`
+
+```html
+<form>
+  <fieldset>
+    <legend>Coordonnées</legend>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom"><br>
+      
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email">
+  </fieldset>
+</form>
+```
+
+---
+layout: two-cols
+---
+
+## Exemple 1:
+Créez un formulaire avec :
+1. Un groupe "Identité" (nom, prénom, âge).
+2. Un groupe "Préférences" avec :
+  - Liste déroulante "Pays" (3 options).
+  - Case à cocher "Newsletter" (checked par défaut).
+3. Un bouton "Soumettre".
+
+:: right::
+
+## Solution
+![Solution de l'exemple 1](./images/codes/code_exemple1.png)
+
+---
+layout: center
+class: text-center
+---
+
+# 📑 Récapitulatifs
+
+<div class="text-6xl text-blue-500 mb-8">
+  <carbon-screen/>
+</div>
+
+
+---
+
+| 📑 Balises de structure      | Rôle                         |
+| ----------- | ---------------------------------------------- |
+| `<html>`    | Délimite le document HTML                      |
+| `<head>`    | Contient les métadonnées (titre, liens CSS...) |
+| `<body>`    | Contient le contenu visible de la page         |
+| `<header>`  | En-tête de page ou de section                  |
+| `<nav>`     | Menu de navigation                             |
+| `<main>`    | Contenu principal de la page                   |
+| `<footer>`  | Pied de page ou de section                     |
+| `<article>` | Contenu indépendant (article, post…)           |
+| `<aside>`   | Contenu complémentaire (barre latérale…)       |
+---
+
+## 📑 Balises Méta (Invisibles)
+| Balise	| Rôle|
+| ------- | --- |
+| `<meta>` |	Métadonnées (charset, viewport)|
+| `<link>` |	Liaison (CSS, favicon)|
+| `<script>` |	Code JavaScript|
+
+```html
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+```
+---
+
+## 📝 Balises de texte
+| Balise          | Rôle                                 |
+| --------------- | ------------------------------------ |
+| `<h1>` à `<h6>` | Titres (du plus grand au plus petit) |
+| `<p>`           | Paragraphe                           |
+| `<br>`          | Saut de ligne                        |
+| `<hr>`          | Ligne horizontale                    |
+| `<strong>`      | Texte en **gras** (important)        |
+| `<em>`          | Texte en *italique* (emphase)        |
+| `<u>`           | Texte <u>souligné</u>                |
+| `<span>`        | Conteneur en ligne (inline)          |
+---
+
+## 📋 Balises de liste
+| Balise | Rôle                       |
+| ------ | -------------------------- |
+| `<ul>` | Liste non ordonnée (puces) |
+| `<ol>` | Liste ordonnée (numérotée) |
+| `<li>` | Élément de liste           |
+
+## 📦 Balises de conteneur
+| Balise   | Rôle                             |
+| -------- | -------------------------------- |
+| `<div>`  | Bloc de contenu (display: block) |
+| `<span>` | Conteneur en ligne (inline)      |
+| `<p>`    | Paragraphe      |
+---
+layout: two-cols
+---
+
+## 🔗 Balises de lien et média
+| Balise     | Rôle                              |
+| ---------- | --------------------------------- |
+| `<a>`      | Lien hypertexte                   |
+| `<img>`    | Image                             |
+| `<video>`  | Vidéo                             |
+| `<audio>`  | Audio                             |
+| `<iframe>` | Contenu externe (YouTube, carte…) |
+
+::right::
+## Exemples
+- Avec `<video>`:
+```html
+<video width="640" height="360" controls>
+  <source src="ma_video.mp4" type="video/mp4">
+  <source src="ma_video.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+```
+
+- Avec `<iframe>`:
+```html
+<!-- Exemple : carte Google Maps -->
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." 
+  width="600" height="450" allowfullscreen="">
+</iframe>
+<!-- Exemple : vidéo YouTube -->
+<iframe 
+  width="560" height="315" 
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  title="Vidéo YouTube" 
+  frameborder="0" 
+  allowfullscreen>
+</iframe>
+```
+---
+
+## 📤 Balises de formulaire
+
+| Balise       | Rôle                       |
+| ------------ | -------------------------- |
+| `<form>`     | Début d’un formulaire      |
+| `<input>`    | Champ de saisie            |
+| `<textarea>` | Zone de texte              |
+| `<select>`   | Liste déroulante           |
+| `<option>`   | Option dans une liste      |
+| `<button>`   | Bouton (valider, envoyer…) |
+| `<label>`    | Étiquette d’un champ       |
+
+---
+layout: two-cols
+---
+
+# Exercice Pratique 3:
+Créez une page HTML permettant de réserver une place pour un Marathon International.
+Le site doit comporter une structure complète avec en-tête, navigation, tableau d’informations et formulaire interactif.<br> 
+**Partie 1 – Informations générales & Menu**<br>
+| Ajoutez en haut de la page :
+- Un titre principal avec le nom de l’événement.
+- Un menu de navigation comportant trois liens :
+    1. Infos → section présentant les courses disponibles
+    2. Réservation → formulaire d’inscription
+    3. Contact → liens utiles (email, téléphone, site web)
+
+:: right::
+
+**Partie 2 – Tableau d'information**<br>
+| Sous la section Infos, insérez un tableau affichant :
+`Nom de la course`, `Distance`, `Prix`, `Heure de départ`.<br>
+Ajoutez également une liste d’équipements recommandés avec des listes imbriquées 
+![visuel](./images/exo_prat3.png)
+
+---
+layout: two-cols
+---
+ 
+**Partie 3 – Formulaire de réservation**<br>
+| Créez un formulaire HTML avec les sections suivantes :
+- Identité
+    - Civilité (liste déroulante : M., Mme, Autre)
+    - Nom (text, obligatoire)
+    - Prénom (text, obligatoire)
+    - Email (email, obligatoire)
+    - Téléphone (tel, format français à 10 chiffres)
+    - Date de naissance (date, obligatoire)
+    - Photo d’identité (file, image uniquement)
+- Préférences
+    - Course choisie (boutons radio : Marathon, Semi-marathon ou le bonus)
+    - Numéro de dossard souhaité (number, min 1, max 9999)
+
+:: right::
+- 
+    - Taille du t-shirt (liste déroulante avec groupes Homme / Femme)
+    - Allergies alimentaires (liste multiple avec quelques options)
+    - Heure d’arrivée estimée (time, entre 06:00 et 08:00)
+    - Newsletter (case à cocher)
+- Paiement
+    - Mot de passe pour le compte (password, min 8 caractères)
+    - Type de carte (liste déroulante : Visa, Mastercard)
+    - Numéro de carte (text, 16 chiffres)
+    - Date d’expiration (month)
+    - Cryptogramme visuel (text, 3 chiffres)
+
+---
+layout: two-cols
+---
+
+**Partie 4 – Boutons**
+- Confirmer la réservation (submit)
+- Annuler (reset)
+
+**Partie 5 – Pied de page**
+
+| Ajoutez un pied de page avec :
+- Un lien email
+- Un lien téléphone
+- Un lien vers le site officiel (nouvel onglet)
+- Le texte `Marathon International 2025`
 
 ---
 layout: two-cols
