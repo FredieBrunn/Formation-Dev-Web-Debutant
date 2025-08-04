@@ -113,14 +113,18 @@ layout: two-cols
 ```
 
 ---
+layout: two-cols
+---
 
 ## 📝 Exercice 1
  Realisez le visuel ci dessous
- ![Aperçu de l'exercice](./images/exercice1.png)
+ ![Aperçu de l'exercice](../../images/exercice1.png)
+
+::right::
 
 ## ✅ Corrigé
 
-[Correction de l’exercice](html/exercice1.html){download}
+[Correction de l’exercice](../../public/html/exercice1.html){download}
 ---
 layout: two-cols
 ---
@@ -275,7 +279,7 @@ Créer une page contenant :
 - Une liste de vos 3 langages préférés
 - Une liste numérotée des étapes d’installation de Visual Studio Code
 - Une liste imbriquée de vos hobbies (ex: Sport → Foot, Basket / Musique → Jazz, Rap, ...)
-![Aperçu de l'exercice](./images/listes.png)
+![Aperçu de l'exercice](../../images/listes.png)
 
 ## ✅ Corrigé
 
@@ -371,7 +375,7 @@ layout: two-cols
 ## 📝 Exercice 5
 Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
-![Aperçu de l'exercice](./images/tableau.png)
+![Aperçu de l'exercice](../../images/tableau.png)
 
 ## ✅ Corrigé
 
@@ -379,7 +383,7 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
 ::right::
 
-![Appercu de l'exercice](./images/tableau2.png)
+![Appercu de l'exercice](../../images/tableau2.png)
 
 ## ✅ Corrigé
 
@@ -390,7 +394,7 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 ## 🎯 Exercice Pratique 2
 
 Créez une page HTML5 permettant d'afficher :
-![Appercu de l'exercice](./images/tableau3.png)
+![Appercu de l'exercice](../../images/tableau3.png)
 
 ### Critères d'évaluation :
 - ✅ Structure HTML5 valide
@@ -1060,7 +1064,7 @@ Créez un formulaire avec :
 :: right::
 
 ## Solution
-![Solution de l'exemple 1](./images/codes/code_exemple1.png)
+![Solution de l'exemple 1](../../images/codes/code_exemple1.png)
 
 ---
 layout: center
@@ -1203,7 +1207,7 @@ Le site doit comporter une structure complète avec en-tête, navigation, tablea
 | Sous la section Infos, insérez un tableau affichant :
 `Nom de la course`, `Distance`, `Prix`, `Heure de départ`.<br>
 Ajoutez également une liste d’équipements recommandés avec des listes imbriquées 
-![visuel](./images/exo_prat3.png)
+![visuel](../../images/exo_prat3.png)
 
 ---
 layout: two-cols
