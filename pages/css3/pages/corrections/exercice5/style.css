@@ -1,0 +1,234 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #146b8c;
+  color: white;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+h2 {
+  color: #146b8c;
+  border-bottom: 2px solid #4EC5D4;
+  padding-bottom: 5px;
+}
+
+/* Familles de polices */
+.serif {
+  font-family: 'Playfair Display', Georgia, Times, serif;
+  font-size: 18px;
+}
+
+.sans-serif {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.monospace {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
+.cursive {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 18px;
+}
+
+.fantasy {
+  font-family: Impact, fantasy;
+  font-size: 18px;
+}
+
+/* Propriétés de texte */
+.size-demo {
+  font-size: 12px;
+}
+.size-demo::before { content: "12px - "; }
+.size-demo::after { 
+  content: ""; 
+  display: block; 
+  font-size: 16px; 
+  margin-top: 5px;
+}
+.size-demo::after::before { content: "16px - "; }
+
+.size-demo::after::after { 
+  content: ""; 
+  display: block; 
+  font-size: 24px; 
+  margin-top: 5px;
+}
+
+.weight-demo {
+  font-weight: 400;
+}
+.weight-demo::after {
+  content: "";
+  display: block;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.align-demo {
+  text-align: left;
+}
+.align-demo::after {
+  content: "";
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+.align-demo::after::after {
+  content: "";
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.line-height-demo {
+  line-height: 1;
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+.line-height-demo::after {
+  content: "";
+  display: block;
+  line-height: 2;
+  background-color: #e0e0e0;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.text-decoration-demo {
+  text-decoration: underline;
+}
+.text-decoration-demo::after {
+  content: "";
+  display: block;
+  text-decoration: line-through;
+  margin-top: 5px;
+}
+.text-decoration-demo::after::after {
+  content: "";
+  display: block;
+  text-decoration: underline overline;
+  margin-top: 5px;
+}
+
+.text-transform-demo {
+  text-transform: uppercase;
+}
+.text-transform-demo::after {
+  content: "";
+  display: block;
+  text-transform: lowercase;
+  margin-top: 5px;
+}
+.text-transform-demo::after::after {
+  content: "";
+  display: block;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+
+/* Effets de texte */
+.shadow-simple {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+}
+
+.shadow-multiple {
+  text-shadow: 
+    -1px -1px 0 #4EC5D4,
+    1px -1px 0 #4EC5D4,
+    -1px 1px 0 #4EC5D4,
+    1px 1px 0 #4EC5D4;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.glow-effect {
+  text-shadow: 0 0 5px #146b8c, 0 0 10px #4EC5D4;
+  font-size: 24px;
+  color: white;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px #146b8c;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.gradient-text {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(to right, #146b8c, #4EC5D4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gestion des débordements */
+.ellipsis p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.wrap-text p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.column-text p {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid #ddd;
+  text-align: justify;
+}
+
+/* Texte responsive */
+.fluid-text {
+  font-size: calc(14px + 0.5vw);
+}
+
+.viewport-text {
+  font-size: 3vw;
+}
+
+.clamp-text {
+  font-size: clamp(16px, 4vw, 24px);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #146b8c;
+  color: white;
+  margin-top: 20px;
+}

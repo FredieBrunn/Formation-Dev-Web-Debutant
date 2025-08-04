@@ -1,0 +1,474 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #146b8c;
+  color: white;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+h2 {
+  color: #146b8c;
+  border-bottom: 2px solid #4EC5D4;
+  padding-bottom: 5px;
+}
+
+h3 {
+  color: #146b8c;
+  margin-top: 30px;
+}
+
+/* Conteneurs */
+.transform-container,
+.transition-container,
+.timing-container,
+.animation-container,
+.control-container,
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Boîtes de base */
+.transform-box,
+.transition-box,
+.timing-box,
+.animation-box,
+.control-box {
+  width: 100px;
+  height: 100px;
+  background-color: #4EC5D4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Transformations 2D */
+.transform-box.translate:hover {
+  transform: translate(20px, 10px);
+}
+
+.transform-box.rotate:hover {
+  transform: rotate(45deg);
+}
+
+.transform-box.scale:hover {
+  transform: scale(1.5);
+}
+
+.transform-box.skew:hover {
+  transform: skew(20deg, 10deg);
+}
+
+.transform-box.multiple:hover {
+  transform: translate(10px, 10px) rotate(45deg) scale(1.2);
+}
+
+/* Transformations 3D */
+.transform-box.rotate3d:hover {
+  transform: rotate3d(1, 1, 0, 45deg);
+}
+
+.transform-box.flip:hover {
+  transform: rotateY(180deg);
+}
+
+/* Cube 3D */
+.perspective-box {
+  perspective: 600px;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(15deg);
+  transition: transform 0.5s;
+}
+
+.perspective-box:hover .cube {
+  transform: rotateX(-25deg) rotateY(45deg);
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(78, 197, 212, 0.7);
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.cube-face.front {
+  transform: translateZ(75px);
+}
+
+.cube-face.back {
+  transform: translateZ(-75px) rotateY(180deg);
+}
+
+.cube-face.top {
+  transform: rotateX(90deg) translateZ(75px);
+}
+
+.cube-face.bottom {
+  transform: rotateX(-90deg) translateZ(75px);
+}
+
+.cube-face.left {
+  transform: rotateY(-90deg) translateZ(75px);
+}
+
+.cube-face.right {
+  transform: rotateY(90deg) translateZ(75px);
+}
+
+/* Transitions de base */
+.transition-box {
+  transition: all 0.5s ease;
+}
+
+.transition-box.color:hover {
+  background-color: #146b8c;
+}
+
+.transition-box.size:hover {
+  transform: scale(1.3);
+}
+
+.transition-box.position:hover {
+  transform: translateY(-20px);
+}
+
+.transition-box.opacity:hover {
+  opacity: 0.5;
+}
+
+/* Fonctions de timing */
+.timing-box {
+  transform: translateX(0);
+}
+
+.timing-box.ease:hover {
+  transform: translateX(100px);
+  transition: transform 1s ease;
+}
+
+.timing-box.linear:hover {
+  transform: translateX(100px);
+  transition: transform 1s linear;
+}
+
+.timing-box.ease-in:hover {
+  transform: translateX(100px);
+  transition: transform 1s ease-in;
+}
+
+.timing-box.ease-out:hover {
+  transform: translateX(100px);
+  transition: transform 1s ease-out;
+}
+
+.timing-box.ease-in-out:hover {
+  transform: translateX(100px);
+  transition: transform 1s ease-in-out;
+}
+
+.timing-box.cubic-bezier:hover {
+  transform: translateX(100px);
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Transitions multiples */
+.multi-transition-box {
+  width: 150px;
+  height: 150px;
+  background-color: #4EC5D4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.6s ease-in-out,
+    border-radius 1s linear;
+  cursor: pointer;
+}
+
+.multi-transition-box:hover {
+  background-color: #146b8c;
+  transform: scale(1.2) rotate(360deg);
+  border-radius: 50%;
+}
+
+/* Animations de base */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animation-box.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.animation-box.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animation-box.rotate {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.animation-box.shake {
+  animation: shake 1s;
+}
+
+.animation-box.shake:hover {
+  animation: shake 1s infinite;
+}
+
+/* Contrôle d'animations */
+.control-box.delay {
+  animation: pulse 2s infinite;
+  animation-delay: 1s;
+}
+
+.control-box.direction {
+  animation: rotate 3s infinite;
+  animation-direction: alternate;
+}
+
+.control-box.fill-mode {
+  animation: bounce 2s;
+  animation-fill-mode: forwards;
+}
+
+.control-box.iterations {
+  animation: shake 0.5s;
+  animation-iteration-count: 3;
+}
+
+.control-box.play-state {
+  animation: rotate 3s linear infinite;
+}
+
+.control-box.play-state:hover {
+  animation-play-state: paused;
+}
+
+/* Animation complexe */
+.loader {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.loader-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #4EC5D4;
+  border-radius: 50%;
+  animation: loader-bounce 1.4s infinite ease-in-out both;
+}
+
+.loader-circle:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loader-circle:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loader-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Applications pratiques */
+/* Boutons animés */
+.animated-button {
+  padding: 10px 20px;
+  background: #4EC5D4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.animated-button.grow:hover {
+  transform: scale(1.1);
+}
+
+.animated-button.pulse:hover {
+  animation: button-pulse 1s infinite;
+}
+
+@keyframes button-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated-button.slide {
+  background: linear-gradient(to right, #4EC5D4 50%, #146b8c 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: all 0.5s ease;
+}
+
+.animated-button.slide:hover {
+  background-position: right bottom;
+}
+
+.animated-button.fill {
+  background: transparent;
+  border: 2px solid #4EC5D4;
+  color: #4EC5D4;
+  transition: all 0.5s ease;
+}
+
+.animated-button.fill:hover {
+  background: #4EC5D4;
+  color: white;
+}
+
+/* Carte avec effet 3D */
+.card-container {
+  perspective: 1000px;
+  margin: 20px 0;
+}
+
+.flip-card {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flip-card-front {
+  background-color: #4EC5D4;
+  color: white;
+}
+
+.flip-card-back {
+  background-color: #146b8c;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #146b8c;
+  color: white;
+  margin-top: 20px;
+}

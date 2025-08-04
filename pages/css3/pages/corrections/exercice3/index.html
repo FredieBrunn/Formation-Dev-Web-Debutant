@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice 3: Modèle de Boîte</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Modèle de Boîte CSS</h1>
+    
+    <div class="box content-box">
+      <h2>box-sizing: content-box</h2>
+      <p>Width: 300px, Padding: 20px, Border: 5px</p>
+      <p>Largeur totale: 300 + 2*20 + 2*5 = 350px</p>
+    </div>
+    
+    <div class="box border-box">
+      <h2>box-sizing: border-box</h2>
+      <p>Width: 300px, Padding: 20px, Border: 5px</p>
+      <p>Largeur totale: 300px (inclut padding et border)</p>
+    </div>
+    
+    <div class="nested-boxes">
+      <h2>Boîtes imbriquées</h2>
+      <div class="outer">
+        Outer box (margin: 20px)
+        <div class="middle">
+          Middle box (margin: 20px, padding: 20px)
+          <div class="inner">
+            Inner box (padding: 20px, border: 5px)
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="margin-collapse-demo">
+      <h2>Effondrement des marges</h2>
+      <div class="collapse-box1">Box 1 (margin-bottom: 50px)</div>
+      <div class="collapse-box2">Box 2 (margin-top: 30px)</div>
+      <p>L'espace entre les boîtes est 50px (la plus grande valeur), pas 80px.</p>
+    </div>
+  </div>
+</body>
+</html>

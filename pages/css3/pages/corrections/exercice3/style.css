@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #2B90B6;
+}
+
+h2 {
+  color: #146b8c;
+}
+
+/* Boîtes de base avec différents box-sizing */
+.box {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #2B90B6;
+  margin: 30px auto;
+  background-color: #f5efef;
+}
+
+.content-box {
+  box-sizing: content-box;
+  border-color: #ff6b6b;
+}
+
+.border-box {
+  box-sizing: border-box;
+  border-color: #4ec5d4;
+}
+
+/* Boîtes imbriquées */
+.nested-boxes {
+  margin-top: 40px;
+}
+
+.outer {
+  background-color: #ffcccb;
+  margin: 20px;
+  padding: 10px;
+}
+
+.middle {
+  background-color: #fffa99;
+  margin: 20px;
+  padding: 20px;
+}
+
+.inner {
+  background-color: #c1f0c1;
+  padding: 20px;
+  border: 5px dashed #146b8c;
+}
+
+/* Démonstration de l'effondrement des marges */
+.margin-collapse-demo {
+  margin-top: 40px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.collapse-box1 {
+  background-color: #ffcccb;
+  padding: 20px;
+  margin-bottom: 50px; /* Cette marge va s'effondrer */
+}
+
+.collapse-box2 {
+  background-color: #c1f0c1;
+  padding: 20px;
+  margin-top: 30px; /* Cette marge va s'effondrer */
+}
+
+/* Ajout d'une règle pour visualiser les dimensions réelles */
+.box::after {
+  content: "";
+  display: block;
+  clear: both;
+}

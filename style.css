@@ -1,0 +1,4 @@
+/* Ensure slide content area hides overflow instead of scrolling */
+.slidev-layout {
+  overflow: auto; /* Hide overflow, prevents scrollbars */
+}

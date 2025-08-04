@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 8: Design Responsive</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">Site Responsive</div>
+
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Menu">
+          <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1>Design Responsive CSS3</h1>
+      <p>Créez des sites web qui s'adaptent à tous les écrans</p>
+    </div>
+
+    <div class="container">
+      <main class="content">
+        <section class="intro">
+          <h2>Importance du Design Responsive</h2>
+          <p>
+            Le design responsive garantit que votre site web offre une
+            expérience utilisateur optimale sur tous les appareils, des
+            téléphones mobiles aux grands écrans de bureau. Avec l'augmentation
+            constante de la navigation mobile, c'est devenu une nécessité plutôt
+            qu'une option.
+          </p>
+        </section>
+
+        <section class="responsive-grid">
+          <h2>Galerie d'images responsive</h2>
+          <div class="image-grid">
+            <div class="grid-item">
+              <img src="https://via.placeholder.com/800x600" alt="Image 1" />
+              <div class="caption">Image 1</div>
+            </div>
+            <div class="grid-item">
+              <img src="https://via.placeholder.com/800x600" alt="Image 2" />
+              <div class="caption">Image 2</div>
+            </div>
+            <div class="grid-item">
+              <img src="https://via.placeholder.com/800x600" alt="Image 3" />
+              <div class="caption">Image 3</div>
+            </div>
+            <div class="grid-item">
+              <img src="https://via.placeholder.com/800x600" alt="Image 4" />
+              <div class="caption">Image 4</div>
+            </div>
+            <div class="grid-item">
+              <img src="https://via.placeholder.com/800x600" alt="Image 5" />
+              <div class="caption">Image 5</div>
+            </div>
+            <div class="grid-item">
+              <img src="https://via.placeholder.com/800x600" alt="Image 6" />
+              <div class="caption">Image 6</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="responsive-table">
+          <h2>Tableau Responsive</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Produit</th>
+                  <th>Description</th>
+                  <th>Prix</th>
+                  <th>Disponibilité</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Produit">Produit A</td>
+                  <td data-label="Description">
+                    Description détaillée du produit A
+                  </td>
+                  <td data-label="Prix">19,99 €</td>
+                  <td data-label="Disponibilité">En stock</td>
+                  <td data-label="Actions"><button>Acheter</button></td>
+                </tr>
+                <tr>
+                  <td data-label="Produit">Produit B</td>
+                  <td data-label="Description">
+                    Description détaillée du produit B
+                  </td>
+                  <td data-label="Prix">29,99 €</td>
+                  <td data-label="Disponibilité">En rupture</td>
+                  <td data-label="Actions">
+                    <button disabled>Acheter</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Produit">Produit C</td>
+                  <td data-label="Description">
+                    Description détaillée du produit C
+                  </td>
+                  <td data-label="Prix">39,99 €</td>
+                  <td data-label="Disponibilité">En stock</td>
+                  <td data-label="Actions"><button>Acheter</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>À propos</h3>
+          <p>
+            Informations complémentaires qui apparaîtront dans la sidebar sur
+            desktop et seront repositionnées sur mobile.
+          </p>
+        </div>
+
+        <div class="widget">
+          <h3>Catégories</h3>
+          <ul>
+            <li><a href="#">Responsive Design</a></li>
+            <li><a href="#">CSS Grid</a></li>
+            <li><a href="#">Flexbox</a></li>
+            <li><a href="#">Media Queries</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>À propos</h3>
+            <p>Site d'exemple pour la formation CSS3.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Liens</h3>
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">À propos</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@example.com</p>
+            <p>Téléphone: 01 23 45 67 89</p>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2025 Formation CSS3. Tous droits réservés.
+        </div>
+      </footer>
+  </body>
+</html>

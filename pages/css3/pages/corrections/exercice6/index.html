@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercice 6: Techniques de Mise en Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="sticky-header">
+      <h1>Techniques de Mise en Page CSS</h1>
+      <nav class="flex-nav">
+        <ul>
+          <li><a href="#positionnement">Positionnement</a></li>
+          <li><a href="#flexbox">Flexbox</a></li>
+          <li><a href="#grid">CSS Grid</a></li>
+          <li><a href="#responsive">Design Responsive</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="positionnement" class="section-position">
+        <h2>Positionnement CSS</h2>
+        <div class="position-container">
+          <div class="box normal">Position normale (static)</div>
+          <div class="box relative">Position relative</div>
+          <div class="box absolute">Position absolue</div>
+        </div>
+        <div class="fixed-box">Position fixe</div>
+      </section>
+
+      <section id="flexbox" class="section-flexbox">
+        <h2>Mise en page avec Flexbox</h2>
+
+        <h3>Menu horizontal flexible</h3>
+        <nav class="flex-menu">
+          <a href="#">Accueil</a>
+          <a href="#">Services</a>
+          <a href="#">Produits</a>
+          <a href="#">À propos</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <h3>Cartes avec Flexbox</h3>
+        <div class="flex-cards">
+          <div class="card">
+            <h4>Carte 1</h4>
+            <p>
+              Description courte de la carte 1. Flexbox permet de créer des
+              mises en page flexibles.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+          </div>
+          <div class="card">
+            <h4>Carte 2</h4>
+            <p>
+              Description courte de la carte 2. Les cartes peuvent avoir des
+              contenus de longueur variable.
+            </p>
+            <p>Exemple de contenu supplémentaire.</p>
+            <a href="#" class="btn">En savoir plus</a>
+          </div>
+          <div class="card">
+            <h4>Carte 3</h4>
+            <p>
+              Description courte de la carte 3. Les hauteurs des cartes
+              s'adaptent automatiquement.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="grid" class="section-grid">
+        <h2>Mise en page avec CSS Grid</h2>
+
+        <h3>Galerie d'images avec Grid</h3>
+        <div class="grid-gallery">
+          <div class="gallery-item item1">Image 1</div>
+          <div class="gallery-item item2">Image 2</div>
+          <div class="gallery-item item3">Image 3</div>
+          <div class="gallery-item item4">Image 4</div>
+          <div class="gallery-item item5">Image 5</div>
+          <div class="gallery-item item6">Image 6</div>
+        </div>
+
+        <h3>Layout de page avec Grid</h3>
+        <div class="grid-layout">
+          <div class="grid-header">Header</div>
+          <div class="grid-sidebar">Sidebar</div>
+          <div class="grid-content">Contenu principal</div>
+          <div class="grid-footer">Footer</div>
+        </div>
+      </section>
+
+      <section id="responsive" class="section-responsive">
+        <h2>Design Responsive</h2>
+
+        <h3>Grille responsive</h3>
+        <div class="responsive-grid">
+          <div class="responsive-item">Élément 1</div>
+          <div class="responsive-item">Élément 2</div>
+          <div class="responsive-item">Élément 3</div>
+          <div class="responsive-item">Élément 4</div>
+          <div class="responsive-item">Élément 5</div>
+          <div class="responsive-item">Élément 6</div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Formation Dev Web - UNITECHS</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice 2: Sélecteurs CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="main-header">
+    <h1>Site d'Apprentissage CSS</h1>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <article class="post">
+      <h2>Premier Article</h2>
+      <p><b>Selecteurs Simples</b> <br> Nous avons vu les sélecteurs de type, de classe et d'ID. Le sélecteur de type s'applique à tous les éléments d'un même type, comme tous les <code>&lt;p&gt;</code> ou tous les <code>&lt;h1&gt;</code>. Le sélecteur de classe cible des éléments spécifiques ayant une même classe, tandis que le sélecteur d'ID est unique à un seul élément.</p>
+      <img src="../../../images/exercice1.png" alt="Description 1" 
+      width="200">
+      <a href="#" class="read-more">Lire la suite</a>
+    </article>
+    <article class="post featured">
+      <h2>Article Vedette</h2>
+      <p><b>Selecteurs d'Attributs</b> <br> Les sélecteurs d'attributs permettent de cibler des éléments en fonction de la présence ou de la valeur d'un attribut spécifique. Par exemple, on peut sélectionner tous les liens qui ouvrent dans un nouvel onglet avec <code>a[target="_blank"]</code>.</p>
+      <p>Les sélecteurs d'attributs sont très utiles pour styliser des éléments en fonction de leurs attributs, comme les liens, les boutons, ou même les formulaires.</p>
+      <img src="../../../images/listes.png" alt="Description 2" 
+      width="200">
+      <a href="#" class="read-more">Lire la suite</a>
+    </article>
+    
+    <article class="post">
+      <h2>Dernier Article</h2>
+      <p><b>Selecteurs de Pseudo-Classes</b> <br> Les pseudo-classes permettent de cibler des éléments en fonction de leur état. Par exemple, <code>a:hover</code> s'applique aux liens lorsque l'utilisateur passe la souris dessus.</p>
+      <img src="../../../images/tableau.png" alt="Description 3" 
+      width="200">
+      <a href="#" target="_blank" class="read-more">
+        Lire la suite
+      </a>
+    </article>
+
+    <article class="post">
+      <h2>Article</h2>
+      <p><b>Selecteurs de Pseudo-Elements</b> <br> Les pseudo-éléments permettent de cibler des parties spécifiques d'un élément. Par exemple, <code>p::first-letter</code> s'applique à la première lettre d'un paragraphe.</p>
+    </article>
+
+    <article class="post">
+      <h2>Article</h2>
+      <p><b>Selecteurs Combinés</b> <br> Les sélecteurs combinés permettent de cibler des éléments en fonction de leur relation avec d'autres éléments. Par exemple, <code>div > p</code> cible tous les paragraphes qui sont des enfants directs d'un div.</p>
+    </article>
+
+    <article class="post">
+      <h2>Article</h2>
+      <p><b>Selecteurs Multiples</b> <br> Les sélecteurs multiples permettent de cibler plusieurs éléments en une seule déclaration. Par exemple, <code>h1, h2, h3</code> cible tous les titres de niveau 1, 2 et 3.</p>
+    </article>
+
+  </main>
+  
+  <footer>
+    <div class="links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+    <p class="copyright">© 2025 Formation CSS3 & Responsive Design - UNITECHS</p>
+  </footer>
+</body>
+</html>
