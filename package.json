@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node slides.md",
     "dev": "slidev",
-    "build": "slidev build --base=/ --without-export",
+    "build": "SLIDEV_EXPORT=false slidev build --base=/",
     "export": "slidev export"
   },
   "dependencies": {
