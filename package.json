@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node slides.md",
     "dev": "slidev",
-    "build": "slidev build --base=/ --no-export",
+    "build": "slidev build --base=/ --without-export",
     "export": "slidev export"
   },
   "dependencies": {
@@ -11,5 +11,4 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest"
   }
-  
 }
