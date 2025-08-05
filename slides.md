@@ -143,8 +143,6 @@ Créer la page d'accueil d'un site e-commerce responsive avec :
 **Temps estimé : 35 minutes**
 
 ---
-layout: two-cols
----
 
 # 2.8 TP Partie 2 - Dashboard Responsive
 
@@ -161,7 +159,6 @@ Créer un dashboard d'administration responsive avec CSS Grid et Flexbox
 5. **Tableau de données** : Responsive avec scroll horizontal
 6. **Animations** : Transitions fluides, micro-interactions
 
-::right::
 
 ### Composants requis :
 - **4 widgets statistiques** (Users, Revenue, Orders, Growth)

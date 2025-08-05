@@ -449,13 +449,13 @@ Conseils pour l'exercice:
 
 <div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
 
-  <a href="./corrections/exercice2/index.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+  <a href="/corrections/exercice2/index.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>👁️</span> Visualiser la correction 
   </a>
-  <!-- <a href="/corrections/exercice2/index.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+  <a href="/corrections/exercice2/index.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>📥</span> Télécharger la correction HTML
   </a>
-  <a href="/corrections/exercice2.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+  <!-- <a href="/corrections/exercice2.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>🗜️</span> Télécharger le ZIP
   </a> -->
 </div>
