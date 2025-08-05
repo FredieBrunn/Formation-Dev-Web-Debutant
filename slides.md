@@ -14,7 +14,6 @@ drawings:
 transition: slide-left
 mdc: true
 overviewSnapshots: true
-download: true
 css: ['./style.css']
 ---
 
