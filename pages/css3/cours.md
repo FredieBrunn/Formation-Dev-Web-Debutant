@@ -4,16 +4,11 @@ transition: fade-out
 
 # Programme de la Formation
 
-<Toc maxDepth="1"></Toc>
-
-<v-clicks>
-
-- **Durée**: Formation complète de 5 jours
+- **Durée**: Cours complète de 4 jours
 - **Niveau**: Débutant avec bases HTML5
 - **Méthode**: Théorie + Exercices pratiques + TP + Projet final
 - **Objectif**: Maîtrise des bases et techniques avancées du CSS3
 
-</v-clicks>
 
 <style>
 h1 {
