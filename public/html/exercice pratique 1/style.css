@@ -29,6 +29,10 @@ header {
     z-index: 1000;
 }
 
+h2:hover {
+    transform: rotate(2deg);
+    transition: transform 0.45s;
+}
 
 header h1 {
     font-size: 2.2rem;
@@ -61,11 +65,12 @@ nav a {
     font-weight: 500;
     font-size: 1rem;
     box-shadow: 0 2px 8px rgba(12, 142, 228, 0.08);
+    transform: scale();
     transition: 
-        background 0.2s,
-        color 0.2s,
-        transform 0.2s,
-        box-shadow 0.2s;
+        background 0.20s,
+        color 0.20s,
+        transform 0.20s,
+        box-shadow 0.20s;
     display: inline-block;
 }
 
@@ -245,7 +250,7 @@ p span:hover {
 /* --- DESSERTS --- */
 section h3 {
     margin-top: 24px;
-    color: #0c8ee4;
+    color: #0c8ee4
 }
 
 /* --- CONTACT PAGE --- */

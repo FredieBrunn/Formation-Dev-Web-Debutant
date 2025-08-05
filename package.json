@@ -3,14 +3,13 @@
   "scripts": {
     "start": "node slides.md",
     "dev": "slidev",
-    "build": "node build.js",
-    "build:slidev": "slidev build --base=/ --spa",
+    "build": "slidev build --base=/",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.49.29",
-    "@slidev/theme-default": "^0.49.29",
-    "@slidev/theme-seriph": "^0.49.29",
-    "vite": "latest"
+    "@slidev/cli": "latest",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest"
   }
+  
 }
