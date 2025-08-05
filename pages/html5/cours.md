@@ -124,7 +124,10 @@ layout: two-cols
 
 ## ✅ Corrigé
 
-[Correction de l’exercice](../../public/html/exercice1.html){download}
+<a href="/corrections/html/exercice1.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction
+</a>
+
 ---
 layout: two-cols
 ---
@@ -193,7 +196,9 @@ Creer une page contenant :
 
 ## ✅ Corrigé
 
-[📥 Télécharger](html/exercice3.html){download}
+<a href="/corrections/html/exercice3.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction
+</a>
 
 ---
 
@@ -283,7 +288,9 @@ Créer une page contenant :
 
 ## ✅ Corrigé
 
-[Correction de l’exercice](html/exercice4.html){download}
+<a href="/corrections/html/exercice4.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction
+</a>
 
 
 ---
@@ -307,7 +314,19 @@ Créez une page HTML5 pour un restaurant avec :
 
 **Temps estimé : 30 minutes**
 
-[Correction de l’exercice](html/exercicePratique.html){download}
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+  <a href="/corrections/html/exercice pratique 1/index.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <a href="/corrections/html/exercice pratique 1/index.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+  <a href="/corrections/html/Exercice Pratique 1.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>🗜️</span> Télécharger le ZIP
+  </a>
+</div>
+
 
 ---
 layout: two-cols
@@ -368,6 +387,7 @@ Quand on arrive a avoir un tableau de grande taille, il devient moins évident a
 - 🔸 l'en-tete avec la balise `<thead>`    🔸 le corps avec la balise `<tbody>`  🔸 le pied avec la balise `<tfoot>`
 
 <i>Note: Elles doivent apparaitre dans l'ordre suivant: `<thead>`, `<tfoot>` et `<tbody>`</i>
+
 ---
 layout: two-cols
 ---
@@ -379,7 +399,18 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
 ## ✅ Corrigé
 
-[Correction de l’exercice](html/exercice5.html){download}
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+  <a href="/corrections/html/exercice5.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <!-- <a href="/corrections/html/exercice5.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+  <a href="/corrections/css/exercice2.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>🗜️</span> Télécharger le ZIP
+  </a> -->
+</div>
 
 ::right::
 
@@ -387,7 +418,18 @@ Donner le code html permettant d'afficher le rendu/visuel ci-dessous:
 
 ## ✅ Corrigé
 
-[Correction de l’exercice](html/exercice5-2.html){download}
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+  <a href="/corrections/html/exercice5-2.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <!-- <a href="/corrections/html/exercice5-2.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+  <a href="/corrections/css/exercice2.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>🗜️</span> Télécharger le ZIP
+  </a> -->
+</div>
 
 ---
 
@@ -402,6 +444,21 @@ Créez une page HTML5 permettant d'afficher :
 - ✅ Métadonnées appropriées
 
 **Temps estimé : 10 minutes**
+
+## Correctioon
+
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+  <a href="/corrections/html/exercicePratique2.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <a href="/corrections/html/exercicePratique2.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+  <a href="/corrections/css/exercice2.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>🗜️</span> Télécharger le ZIP
+  </a>
+</div>
 
 ---
 
@@ -739,12 +796,6 @@ L'élément `<input>` est polyvalent et change de comportement selon son attribu
 | `submit` | Bouton d'envoi |
 | `reset` | Bouton de renitialisation |
 | `button` | Bouton simple |
----
-
-## 📝 Types d'input principaux(Suite)
-
-| Type | Usage |
-|------|-------|
 | `radio` | Bouton radio |
 | `file` | Fichier |
 | `submit` | Bouton d'envoi |
@@ -1080,7 +1131,9 @@ class: text-center
 
 ---
 
-| 📑 Balises de structure      | Rôle                         |
+## 📑 Balises de structure
+
+| Balises     | Rôle                         |
 | ----------- | ---------------------------------------------- |
 | `<html>`    | Délimite le document HTML                      |
 | `<head>`    | Contient les métadonnées (titre, liens CSS...) |

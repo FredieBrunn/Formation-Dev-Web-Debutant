@@ -17,6 +17,11 @@ overviewSnapshots: true
 css: ['./style.css']
 ---
 
+<head>
+  <title>Formation Dev Web</title>
+</head>
+
+
 # Les Bases du Développement Web
 ## Formation Complète pour Débutants
 

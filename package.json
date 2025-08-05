@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node slides.md",
     "dev": "slidev",
-    "build": "slidev build --base=/",
+    "build": "slidev build --base=/ && node scripts/copy-corrections.js",
     "export": "slidev export"
   },
   "dependencies": {
