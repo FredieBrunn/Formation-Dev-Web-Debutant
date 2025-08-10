@@ -590,6 +590,7 @@ address a:hover {
     nav ul {
         flex-direction: row;
         gap: 1px;
+        font-size: 5px;
     }
     main {
         margin-top: 60px;
@@ -612,7 +613,7 @@ address a:hover {
 @media (max-width: 480px) {
     nav a {
         padding: 10px ;
-        font-size: 0.95rem;
+        font-size: 0.75rem;
     }
     main {
         margin-top: 50px;
@@ -659,12 +660,16 @@ address a:hover {
         width: 100%;
         table-layout: fixed;
     }
-    th, td {
+    td {
         font-size: 0.9rem;
         padding: 0.5rem 0.2rem;
         min-width: 80px;
         max-width: 160px;
         word-break: break-word;
+    }
+    th {
+        display: table-cell;
+        padding: 0.5rem 0.2rem;
     }
 }
 
