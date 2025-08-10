@@ -1326,7 +1326,7 @@ layout: two-cols
   <a href="/corrections/html/TP/TP HTML5 - Énoncé.pdf" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>📥</span> Télécharger l'Enonce 
   </a>
-  <a href="/corrections/html/TP/index.html" download target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+  <a href="/corrections/html/TP/index.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>👁️</span> Visualiser la solution Attendu 
   </a>
 </div>
