@@ -1315,6 +1315,27 @@ layout: two-cols
 
 [📥 Télécharger](html/exercicePratique3.html){download}
 
+---
+
+# Travaux Pratique
+
+## Enonce
+
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; ">
+
+  <a href="/corrections/html/TP/TP HTML5 - Énoncé.pdf" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger l'Enonce 
+  </a>
+  <a href="/corrections/html/TP/index.html" download target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la solution Attendu 
+  </a>
+</div>
+
+## Correction
+
+<a href="/corrections/html/TP.zip" download class="btn-download-zip" style="padding: 0.5em 1em; background: #f59e42; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>🗜️</span> Télécharger le ZIP
+  </a>
 
 ---
 layout: two-cols

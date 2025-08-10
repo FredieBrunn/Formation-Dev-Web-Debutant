@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements - LibroMonde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Événements LibroMonde</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="evenements.html" class="active">Événements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Événements à venir</h2>
+            
+            <article>
+                <h3>Rencontre avec l'auteur Marie Dubois</h3>
+                <p><strong>Date et heure :</strong> <time datetime="2025-08-15T18:00">Jeudi 15 août 2025 à 18h00</time></p>
+                <p><strong>Description :</strong> Venez rencontrer Marie Dubois pour la sortie de son nouveau roman policier "Le Mystère du phare". Séance de dédicaces et échanges avec l'auteur.</p>
+                <p><strong>Lieu :</strong> LibroMonde - Espace événements</p>
+            </article>
+            
+            <article>
+                <h3>Club de lecture - Les classiques revisités</h3>
+                <p><strong>Date et heure :</strong> <time datetime="2025-08-20T19:30">Mardi 20 août 2025 à 19h30</time></p>
+                <p><strong>Description :</strong> Discussion autour du livre du mois "1984" de George Orwell. Débat et partage d'impressions entre lecteurs passionnés.</p>
+                <p><strong>Lieu :</strong> LibroMonde - Salon de lecture</p>
+            </article>
+            
+            <article>
+                <h3>Atelier d'écriture créative</h3>
+                <p><strong>Date et heure :</strong> <time datetime="2025-08-25T14:00">Dimanche 25 août 2025 à 14h00</time></p>
+                <p><strong>Description :</strong> Atelier animé par un écrivain professionnel pour développer votre créativité littéraire. Exercices pratiques et conseils personnalisés.</p>
+                <p><strong>Lieu :</strong> LibroMonde - Espace créatif</p>
+            </article>
+            
+            <article>
+                <h3>Lecture théâtralisée pour enfants</h3>
+                <p><strong>Date et heure :</strong> <time datetime="2025-08-30T15:00">Vendredi 30 août 2025 à 15h00</time></p>
+                <p><strong>Description :</strong> Spectacle interactif basé sur "Les Aventures de Tom" avec animations et surprises pour les 6-12 ans.</p>
+                <p><strong>Lieu :</strong> LibroMonde - Espace jeunesse</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Archives des événements</h2>
+            <ul>
+                <li>Café littéraire avec Jean-Paul Martin - 25 juillet 2025</li>
+                <li>Présentation "Histoire de l'art moderne" - 18 juillet 2025</li>
+                <li>Dégustation de thés et lectures poétiques - 10 juillet 2025</li>
+                <li>Conférence "Physique quantique pour tous" - 3 juillet 2025</li>
+                <li>Fête de la librairie indépendante - 28 juin 2025</li>
+                <li>Nuit de la lecture - 15 juin 2025</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Inscription aux événements</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Vos informations</legend>
+                    <p>
+                        <label for="nom_event">Nom :</label>
+                        <input type="text" id="nom_event" name="nom_event" required>
+                    </p>
+                    <p>
+                        <label for="prenom_event">Prénom :</label>
+                        <input type="text" id="prenom_event" name="prenom_event" required>
+                    </p>
+                    <p>
+                        <label for="email_event">Email :</label>
+                        <input type="email" id="email_event" name="email_event" required>
+                    </p>
+                    <p>
+                        <label for="telephone_event">Téléphone :</label>
+                        <input type="tel" id="telephone_event" name="telephone_event">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Choix de l'événement</legend>
+                    <p>
+                        <label for="evenement_choix">Événement souhaité :</label>
+                        <select id="evenement_choix" name="evenement_choix" required>
+                            <option value="">Choisissez un événement</option>
+                            <option value="marie_dubois">Rencontre avec Marie Dubois - 15 août</option>
+                            <option value="club_lecture">Club de lecture - 20 août</option>
+                            <option value="atelier_ecriture">Atelier d'écriture créative - 25 août</option>
+                            <option value="lecture_enfants">Lecture théâtralisée enfants - 30 août</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="nb_places">Nombre de places :</label>
+                        <input type="number" id="nb_places" name="nb_places" min="1" max="10" value="1" required>
+                    </p>
+                    <p>
+                        <label for="demandes_speciales">Demandes spéciales :</label><br>
+                        <textarea id="demandes_speciales" name="demandes_speciales" rows="4" cols="50" placeholder="Accessibilité, régime alimentaire, etc."></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="submit" value="S'inscrire">
+                    <input type="reset" value="Annuler">
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Nos partenaires</h2>
+            <ul>
+                <li>Médiathèque municipale de Paris</li>
+                <li>Association des Libraires Indépendants</li>
+                <li>École Nationale des Beaux-Arts</li>
+                <li>Université Paris-Sorbonne</li>
+                <li>Maison de la Poésie</li>
+                <li>Festival du Livre de Paris</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Informations de contact</h4>
+        <address>
+            <p><strong>Adresse :</strong> Campus A, Uds Dschang</p>
+            <p><strong>Téléphone :</strong> <a href="tel:+237 XXXX XXXX">+237 XXXX XXXX</a></p>
+            <p><strong>Email :</strong> <a href="mailto:contact@libromonde.fr">contact@libromonde.fr</a></p>
+        </address>
+    </footer>
+</body>
+</html>

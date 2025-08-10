@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - LibroMonde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nous contacter</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="evenements.html">Événements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formulaire de contact</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Informations personnelles</legend>
+                    <p>
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </p>
+                    <p>
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </p>
+                    <p>
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="telephone">Téléphone :</label>
+                        <input type="tel" id="telephone" name="telephone">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votre demande</legend>
+                    <p>
+                        <label for="motif">Motif de contact :</label>
+                        <select id="motif" name="motif" required>
+                            <option value="">Sélectionnez un motif</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="commande">Passer une commande</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </p>
+                    
+                    <fieldset>
+                        <legend>Niveau d'urgence</legend>
+                        <p>
+                            <input type="radio" id="urgence_faible" name="urgence" value="faible" checked>
+                            <label for="urgence_faible">Faible</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="urgence_normale" name="urgence" value="normale">
+                            <label for="urgence_normale">Normale</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="urgence_elevee" name="urgence" value="elevee">
+                            <label for="urgence_elevee">Élevée</label>
+                        </p>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Services d'intérêt</legend>
+                        <p>
+                            <input type="checkbox" id="livres_neufs" name="services[]" value="livres_neufs">
+                            <label for="livres_neufs">Livres neufs</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="livres_occasion" name="services[]" value="livres_occasion">
+                            <label for="livres_occasion">Livres d'occasion</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="commandes_speciales" name="services[]" value="commandes_speciales">
+                            <label for="commandes_speciales">Commandes spéciales</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="evenements" name="services[]" value="evenements">
+                            <label for="evenements">Événements</label>
+                        </p>
+                    </fieldset>
+                    
+                    <p>
+                        <label for="message">Votre message :</label><br>
+                        <textarea id="message" name="message" rows="6" cols="50" required></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="submit" value="Envoyer">
+                    <input type="reset" value="Effacer">
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Horaires d'ouverture</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jour</th>
+                        <th>Matin</th>
+                        <th>Après-midi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lundi</td>
+                        <td>Fermé</td>
+                        <td>14h00 - 19h00</td>
+                    </tr>
+                    <tr>
+                        <td>Mardi</td>
+                        <td>9h00 - 12h30</td>
+                        <td>14h00 - 19h00</td>
+                    </tr>
+                    <tr>
+                        <td>Mercredi</td>
+                        <td>9h00 - 12h30</td>
+                        <td>14h00 - 19h00</td>
+                    </tr>
+                    <tr>
+                        <td>Jeudi</td>
+                        <td>9h00 - 12h30</td>
+                        <td>14h00 - 19h00</td>
+                    </tr>
+                    <tr>
+                        <td>Vendredi</td>
+                        <td>9h00 - 12h30</td>
+                        <td>14h00 - 19h00</td>
+                    </tr>
+                    <tr>
+                        <td>Samedi</td>
+                        <td>9h00 - 12h30</td>
+                        <td>14h00 - 18h00</td>
+                    </tr>
+                    <tr>
+                        <td>Dimanche</td>
+                        <td>Fermé</td>
+                        <td>Fermé</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Comment nous trouver</h2>
+            <address>
+                <p><strong>LibroMonde</strong><br>
+                Campus A Batiment 3<br>
+                Université de Dschang<br>
+                Ouest CM</p>
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Informations de contact</h4>
+        <address>
+            <p><strong>Adresse :</strong> Campus A, Uds Dschang</p>
+            <p><strong>Téléphone :</strong> <a href="tel:+237 XXXX XXXX">+237 XXXX XXXX</a></p>
+            <p><strong>Email :</strong> <a href="mailto:contact@libromonde.fr">contact@libromonde.fr</a></p>
+        </address>
+    </footer>
+</body>
+</html>

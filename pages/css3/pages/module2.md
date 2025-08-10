@@ -445,7 +445,7 @@ Conseils pour l'exercice:
 
 ---
 
-# Solution Exercice 2 (HTML)
+# Solution Exercice 2
 
 <div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
 
