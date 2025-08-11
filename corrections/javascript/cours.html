@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Exercice 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice</title>
 </head>
 <body>
     <script>
-        // Demander les informations
         let nom = prompt("Quel est votre nom ?");
         let prenom = prompt("Quel est votre prénom ?");
         let age = prompt("Quel est votre âge ?");
-
-        // Traitement des donnees
         nom = nom.toUpperCase();
         prenom = prenom.charAt(0).toUpperCase() + prenom.slice(1).toLowerCase();
-
-        // Affichage en console
         console.log("Bonjour " + nom + " " + prenom + ", vous avez " + age + " ans !");
         console.log(`Bonjour ${nom} ${prenom}, vous avez ${age} ans !`);
     </script>
+
 </body>
 </html>

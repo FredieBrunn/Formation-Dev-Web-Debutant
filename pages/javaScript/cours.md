@@ -109,8 +109,7 @@ console.log(prenom.toLowerCase()); // jean
 ```
 
 ---
-layout: two-cols
----
+
 
 ### **Exercice 1 : Variables et types**
 Créez un fichier HTML avec un script qui :
@@ -118,7 +117,18 @@ Créez un fichier HTML avec un script qui :
 2. Demande son âge
 3. Affiche un message personnalisé dans la console
 
-::right::
+
+### Correction
+
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+  <a href="/corrections/javascript/exercice1.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <a href="/corrections/javascript/exercice1.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+</div>
 
 
 
@@ -249,9 +259,15 @@ Créez un programme qui :
 
 **Correction Exercice 2 :**
 
-```javascript
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
 
-```
+  <a href="/corrections/javascript/exercice2.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <a href="/corrections/javascript/exercice2.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+</div>
 
 ---
 
@@ -502,3 +518,27 @@ Créez un programme qui :
 
 ---
 
+## 8. Objets
+
+### Création et manipulation d'objets
+
+```javascript
+// Création d'objet
+let personne = {
+    nom: "Dupont",
+    prenom: "Marie",
+    age: 30,
+    email: "marie.dupont@email.com"
+};
+
+// Accès aux propriétés
+console.log(personne.nom);        // "Dupont"
+console.log(personne["prenom"]);  // "Marie"
+
+// Modification des propriétés
+personne.age = 31;
+personne["email"] = "marie.d@email.com";
+
+// Ajout de nouvelles propriétés
+personne.ville = "Paris";
+```
