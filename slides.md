@@ -209,6 +209,8 @@ class: text-center
 Maîtriser JavaScript moderne pour créer des applications interactives
 
 ---
+src: ./pages/javaScript/cours.md
+---
 layout: two-cols
 ---
 

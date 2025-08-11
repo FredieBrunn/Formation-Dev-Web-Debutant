@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Exercice 2</title>
+  </head>
+  <body>
+    <script>
+              // Demander les informations
+              let numeroMois = parseInt(prompt("Entrez un numéro de mois (1-12) :"));
+      let nomMois;
+      let saison;
+
+      switch (numeroMois) {
+          case 1: nomMois = "Janvier"; saison = "Hiver"; break;
+          case 2: nomMois = "Février"; saison = "Hiver"; break;
+          case 3: nomMois = "Mars"; saison = "Printemps"; break;
+          case 4: nomMois = "Avril"; saison = "Printemps"; break;
+          case 5: nomMois = "Mai"; saison = "Printemps"; break;
+          case 6: nomMois = "Juin"; saison = "Été"; break;
+          case 7: nomMois = "Juillet"; saison = "Été"; break;
+          case 8: nomMois = "Août"; saison = "Été"; break;
+          case 9: nomMois = "Septembre"; saison = "Automne"; break;
+          case 10: nomMois = "Octobre"; saison = "Automne"; break;
+          case 11: nomMois = "Novembre"; saison = "Automne"; break;
+          case 12: nomMois = "Décembre"; saison = "Hiver"; break;
+          default:
+              alert("Numéro de mois invalide !");
+              nomMois = "Inconnu";
+              saison = "Inconnue";
+      }
+
+      if (nomMois !== "Inconnu") {
+          alert(`Le mois ${numeroMois} est ${nomMois} et c'est l'${saison}.`);
+      }
+    </script>
+  </body>
+</html>

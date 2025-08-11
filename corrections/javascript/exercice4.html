@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <script>
+      // 1. Calculer la moyenne
+      function calculerMoyenne(notes) {
+        if (notes.length === 0) return 0;
+
+        let somme = 0;
+        for (let note of notes) {
+          somme += note;
+        }
+        return somme / notes.length;
+      }
+
+      // Test
+      let mesNotes = [15, 12, 18, 14, 16];
+      console.log(`Moyenne: ${calculerMoyenne(mesNotes)}`); // 15
+
+      // 2. Vérifier palindrome
+      function estPalindrome(mot) {
+        let motMinuscule = mot.toLowerCase();
+        let motInverse = motMinuscule.split("").reverse().join("");
+        return motMinuscule === motInverse;
+      }
+
+      // Test
+      console.log(estPalindrome("radar")); // true
+      console.log(estPalindrome("hello")); // false
+
+      // 3. Générer mot de passe
+      function genererMotDePasse(longueur) {
+        const caracteres =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+        let motDePasse = "";
+
+        for (let i = 0; i < longueur; i++) {
+          let indexAleatoire = Math.floor(Math.random() * caracteres.length);
+          motDePasse += caracteres[indexAleatoire];
+        }
+
+        return motDePasse;
+      }
+
+      // Test
+      console.log(genererMotDePasse(12)); // Ex: "aB3#kL9@mN2!"
+    </script>
+  </body>
+</html>
