@@ -564,3 +564,205 @@ personne["email"] = "marie.d@email.com";
 // Ajout de nouvelles propriétés
 personne.ville = "Paris";
 ```
+
+---
+
+### Méthodes d'objets
+
+```javascript
+let calculatrice = {
+    resultat: 0,
+    
+    additionner: function(nombre) {
+        this.resultat += nombre;
+        return this;
+    },
+    
+    soustraire: function(nombre) {
+        this.resultat -= nombre;
+        return this;
+    },
+    
+    multiplier: function(nombre) {
+        this.resultat *= nombre;
+        return this;
+    },
+    
+    reset: function() {
+        this.resultat = 0;
+        return this;
+    },
+    
+    afficher: function() {
+        console.log(`Résultat: ${this.resultat}`);
+        return this;
+    }
+};
+
+// Utilisation avec chaînage de méthodes
+calculatrice.additionner(10).multiplier(2).soustraire(5).afficher(); // Résultat: 15
+```
+
+---
+
+## 9. Manipulation du DOM
+
+### Qu'est-ce que le DOM ?
+**Le DOM (Document Object Model)** est une interface de programmation qui représente la structure d'un document HTML/XML sous forme d'arbre d'objets. Chaque élément HTML devient un nœud dans cet arbre.
+
+```
+graph TD
+    document --> html
+    html --> head
+    html --> body
+    head --> title
+    body --> h1
+    body --> p
+    body --> div
+    div --> ul
+    ul --> li1
+    ul --> li2
+
+```
+
+---
+
+```html
+<!DOCTYPE html>
+<html>                    ← Nœud racine
+  <head>                  ← Nœud enfant de html
+    <title>Ma Page</title> ← Nœud enfant de head
+  </head>
+  <body>                  ← Nœud enfant de html
+    <h1>Titre</h1>        ← Nœud enfant de body
+    <p>Paragraphe</p>     ← Nœud enfant de body
+  </body>
+</html>
+```
+
+### Sélection d'éléments
+
+```javascript
+// Sélection par ID
+let titre = document.getElementById("monTitre");
+
+// Sélection par classe
+let elements = document.getElementsByClassName("maClasse");
+let premierElement = document.querySelector(".maClasse");
+let tousElements = document.querySelectorAll(".maClasse");
+
+// Sélection par balise
+let paragraphes = document.getElementsByTagName("p");
+
+// Sélecteurs CSS avancés
+let lien = document.querySelector("a[href^='https']");
+let dernierLi = document.querySelector("ul li:last-child");
+```
+
+---
+
+### Modification du contenu
+
+```javascript
+// Modification du texte
+let titre = document.getElementById("titre");
+titre.textContent = "Nouveau titre";
+titre.innerHTML = "<strong>Titre en gras</strong>";
+
+// Modification des attributs
+let image = document.querySelector("img");
+image.src = "nouvelle-image.jpg";
+image.alt = "Description de la nouvelle image";
+image.setAttribute("data-id", "123");
+
+// Modification du style
+titre.style.color = "blue";
+titre.style.fontSize = "24px";
+titre.style.backgroundColor = "#f0f0f0";
+```
+
+---
+
+### Gestion des classes CSS
+
+```javascript
+let element = document.querySelector(".monElement");
+
+// Ajouter une classe
+element.classList.add("nouvelle-classe");
+
+// Supprimer une classe
+element.classList.remove("ancienne-classe");
+
+// Basculer une classe
+element.classList.toggle("active");
+
+// Vérifier si une classe existe
+if (element.classList.contains("active")) {
+    console.log("L'élément est actif");
+}
+```
+
+---
+
+### Création et suppression d'éléments
+
+```javascript
+// Créer un nouvel élément
+let nouveauParagraphe = document.createElement("p");
+nouveauParagraphe.textContent = "Nouveau paragraphe";
+nouveauParagraphe.className = "nouveau";
+
+// Ajouter l'élément au DOM
+let conteneur = document.getElementById("conteneur");
+conteneur.appendChild(nouveauParagraphe);
+
+// Insérer avant un autre élément
+let premierP = conteneur.querySelector("p");
+conteneur.insertBefore(nouveauParagraphe, premierP);
+
+// Supprimer un élément
+let elementASupprimer = document.querySelector(".aSupprimer");
+elementASupprimer.remove(); // Méthode moderne
+// ou elementASupprimer.parentNode.removeChild(elementASupprimer); // Ancienne méthode
+
+// Remplacer un élément
+let ancienElement = document.querySelector(".ancien");
+let nouveauElement = document.createElement("div");
+nouveauElement.textContent = "Nouvel élément";
+ancienElement.parentNode.replaceChild(nouveauElement, ancienElement);
+```
+
+---
+
+### Navigation dans le DOM
+
+```javascript
+let element = document.querySelector("#monElement");
+
+// Navigation
+let parent = element.parentElement;
+let enfants = element.children;
+let premierEnfant = element.firstElementChild;
+let dernierEnfant = element.lastElementChild;
+let suivant = element.nextElementSibling;
+let precedent = element.previousElementSibling;
+
+// Parcourir tous les enfants
+for (let enfant of element.children) {
+    console.log(enfant.tagName);
+}
+```
+
+---
+
+### **Exercice 7 : Manipulation DOM**
+Créez une page avec :
+1. Un bouton qui change la couleur de fond aléatoirement
+2. Une liste où on peut ajouter des éléments
+3. Un compteur qui s'incrémente au clic
+
+<br>
+<br>
+
+**Correction Exercice 7 :**

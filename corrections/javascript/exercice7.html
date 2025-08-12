@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-couleur {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-ajouter {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .compteur {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        ul {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        li {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exercice de Manipulation DOM</h1>
+        
+        <!-- 1. Bouton changeur de couleur -->
+        <section>
+            <h2>1. Changeur de couleur de fond</h2>
+            <button id="btnCouleur" class="btn-couleur">Changer la couleur de fond</button>
+        </section>
+        
+        <!-- 2. Liste dynamique -->
+        <section>
+            <h2>2. Liste dynamique</h2>
+            <input type="text" id="inputTexte" placeholder="Entrez un élément">
+            <button id="btnAjouter" class="btn-ajouter">Ajouter à la liste</button>
+            <ul id="listeDynamique">
+                <li>Élément d'exemple (cliquez pour supprimer)</li>
+            </ul>
+        </section>
+        
+        <!-- 3. Compteur -->
+        <section>
+            <h2>3. Compteur</h2>
+            <div class="compteur">
+                Compteur : <span id="valeurCompteur">0</span>
+            </div>
+            <button id="btnIncrementer">+1</button>
+            <button id="btnDecrementer">-1</button>
+            <button id="btnReset">Reset</button>
+        </section>
+    </div>
+
+    <script>
+        // 1. Changeur de couleur de fond
+        document.getElementById('btnCouleur').addEventListener('click', function() {
+            // Génération d'une couleur aléatoire
+            const couleurs = [
+                '#ffb3ba', '#ffdfba', '#ffffba', '#baffc9', 
+                '#bae1ff', '#d4baff', '#ffbaed', '#c9ffba',
+                '#ffc9ba', '#bafff5'
+            ];
+            
+            let couleurAleatoire = couleurs[Math.floor(Math.random() * couleurs.length)];
+            document.body.style.backgroundColor = couleurAleatoire;
+        });
+
+        // 2. Liste dynamique
+        const inputTexte = document.getElementById('inputTexte');
+        const btnAjouter = document.getElementById('btnAjouter');
+        const liste = document.getElementById('listeDynamique');
+
+        function ajouterElement() {
+            const texte = inputTexte.value.trim();
+            if (texte === '') {
+                alert('Veuillez entrer un texte !');
+                return;
+            }
+
+            // Créer un nouvel élément de liste
+            const nouvelLi = document.createElement('li');
+            nouvelLi.textContent = texte;
+            
+            // Ajouter un gestionnaire pour la suppression
+            nouvelLi.addEventListener('click', function() {
+                if (confirm('Voulez-vous supprimer cet élément ?')) {
+                    nouvelLi.remove();
+                }
+            });
+
+            // Ajouter à la liste
+            liste.appendChild(nouvelLi);
+            
+            // Vider l'input
+            inputTexte.value = '';
+        }
+
+        btnAjouter.addEventListener('click', ajouterElement);
+
+        // Permettre l'ajout avec la touche Entrée
+        inputTexte.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                ajouterElement();
+            }
+        });
+
+        // Ajouter la fonctionnalité de suppression à l'élément d'exemple
+        liste.firstElementChild.addEventListener('click', function() {
+            if (confirm('Voulez-vous supprimer cet élément ?')) {
+                this.remove();
+            }
+        });
+
+        // 3. Compteur
+        let compteur = 0;
+        const affichageCompteur = document.getElementById('valeurCompteur');
+        const btnIncrementer = document.getElementById('btnIncrementer');
+        const btnDecrementer = document.getElementById('btnDecrementer');
+        const btnReset = document.getElementById('btnReset');
+
+        function mettreAJourCompteur() {
+            affichageCompteur.textContent = compteur;
+            
+            // Changer la couleur selon la valeur
+            if (compteur > 0) {
+                affichageCompteur.style.color = 'green';
+            } else if (compteur < 0) {
+                affichageCompteur.style.color = 'red';
+            } else {
+                affichageCompteur.style.color = 'black';
+            }
+        }
+
+        btnIncrementer.addEventListener('click', function() {
+            compteur++;
+            mettreAJourCompteur();
+        });
+
+        btnDecrementer.addEventListener('click', function() {
+            compteur--;
+            mettreAJourCompteur();
+        });
+
+        btnReset.addEventListener('click', function() {
+            compteur = 0;
+            mettreAJourCompteur();
+        });
+    </script>
+</body>
+</html>
