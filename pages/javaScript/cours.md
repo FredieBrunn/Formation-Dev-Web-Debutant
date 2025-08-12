@@ -440,8 +440,6 @@ Créez les fonctions suivantes :
     - puis diviser cette somme de produits par la somme des coefficients
 2. `estPalindrome(mot)` : vérifie si un mot est un palindrome
 
----
-
 
 ### **Correction**
 
@@ -451,9 +449,12 @@ Créez les fonctions suivantes :
     <span>👁️</span> Visualiser la correction 
   </a>
   <a href="/corrections/javascript/" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
-    <span>📥</span> Télécharger la correction HTML
+    <span>📥</span> Télécharger la correction
   </a>
 </div>
+
+---
+
 ## 7. Tableaux
 
 ### Création et manipulation de base
