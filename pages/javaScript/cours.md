@@ -349,9 +349,15 @@ Créez un programme qui :
 
 **Correction Exercice 3 :**
 
-```
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
 
-```
+  <a href="/corrections/javascript/exercice3.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <a href="/corrections/javascript/exercice3.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+</div>
 
 ---
 
@@ -429,10 +435,25 @@ maFonction();
 ### **Exercice 4 : Fonctions**
 Créez les fonctions suivantes :
 1. `calculerMoyenne(notes)` : calcule la moyenne d'un tableau de notes
+    - Vous devez recuperer les notes et coefficients
+    - Calculer le produits de ses dernier 
+    - puis diviser cette somme de produits par la somme des coefficients
 2. `estPalindrome(mot)` : vérifie si un mot est un palindrome
 
 ---
 
+
+### **Correction**
+
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+
+  <a href="/corrections/javascript/" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>👁️</span> Visualiser la correction 
+  </a>
+  <a href="/corrections/javascript/" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Télécharger la correction HTML
+  </a>
+</div>
 ## 7. Tableaux
 
 ### Création et manipulation de base
