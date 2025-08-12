@@ -610,33 +610,6 @@ calculatrice.additionner(10).multiplier(2).soustraire(5).afficher(); // Résulta
 ### Qu'est-ce que le DOM ?
 **Le DOM (Document Object Model)** est une interface de programmation qui représente la structure d'un document HTML/XML sous forme d'arbre d'objets. Chaque élément HTML devient un nœud dans cet arbre.
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Graphe DOM Mermaid</title>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
-</head>
-<body>
-  <h2>Structure du DOM (Mermaid)</h2>
-  <div class="mermaid">
-graph TD
-    document --> html
-    html --> head
-    html --> body
-    head --> title
-    body --> h1
-    body --> p
-    body --> div
-    div --> ul
-    ul --> li1
-    ul --> li2
-  </div>
-</body>
-</html>
 
 ---
 
