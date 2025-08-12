@@ -445,10 +445,10 @@ Créez les fonctions suivantes :
 
 <div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
 
-  <a href="/corrections/javascript/" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+  <a href="/corrections/javascript/exercice4.html" target="_blank" rel="noopener" class="btn-view" style="padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>👁️</span> Visualiser la correction 
   </a>
-  <a href="/corrections/javascript/" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+  <a href="/corrections/javascript/exercice4.html" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
     <span>📥</span> Télécharger la correction
   </a>
 </div>
@@ -610,7 +610,19 @@ calculatrice.additionner(10).multiplier(2).soustraire(5).afficher(); // Résulta
 ### Qu'est-ce que le DOM ?
 **Le DOM (Document Object Model)** est une interface de programmation qui représente la structure d'un document HTML/XML sous forme d'arbre d'objets. Chaque élément HTML devient un nœud dans cet arbre.
 
-```
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphe DOM Mermaid</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+<body>
+  <h2>Structure du DOM (Mermaid)</h2>
+  <div class="mermaid">
 graph TD
     document --> html
     html --> head
@@ -622,8 +634,9 @@ graph TD
     div --> ul
     ul --> li1
     ul --> li2
-
-```
+  </div>
+</body>
+</html>
 
 ---
 

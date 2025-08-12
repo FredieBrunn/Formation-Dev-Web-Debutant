@@ -1,47 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 3</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 4</title>
+  </head>
+  <body>
     <script>
-        // 1 Table de Multiplication
-        console.log("======= Table de Multiplication ======");
-        for (let i = 1; i <= 10; i++) {
-            for (let j = 1; j <= 12; j++) {
-                console.log(`${i} x ${j} = ${i*j}`);
-            }
+      //  1. Fonction calculMoyenne
+      function calculMoyenne() {
+        let note,
+          coef,
+          somCoef = 0,
+          somProd = 0,
+          moy,
+          nbreNote;
 
-            console.log("-------------------------"); 
-        }
-        console.log("-------------------------");
+        do {
+          nbreNote = parseInt(
+            prompt("Combien de notes avez en votre disposition")
+          );
+        } while (nbreNote <= 0);
 
-        // 2. Calcul de la Somme de 1 a 100
-        let somme = 0;
-        for (let i = 1; i <= 100; i++) {
-            somme += i;
-        }
-        console.log("La somme des nombres de 1 à 100 est :", somme);    
+        for (let i = 1; i <= nbreNote; i++) {
+          note = parseFloat(prompt("Entrez la note " + i));
+          coef = parseFloat(prompt("Entrez le coefficient de la note " + i));
 
-        // 3. Nombres premier entre 1 et 50
-        console.log("-------------------------");
-        console.log("-------------------------");
-        console.log("=== Nombres premiers entre 1 et 50 ===");
-        for (let i = 2; i <= 50; i++) {
-            let estPremier = true;
-            for (let j = 2; j <=  (i/2); j++) {
-                if (i % j === 0) {
-                    estPremier = false;
-                    break;
-                }
-            }
-            if (estPremier) {
-                console.log(i);
-            }
+          somCoef += coef;
+          somProd += note * coef;
         }
+
+        moy = somProd / somCoef;
+
+        return moy;
+      }
+
+      //   2. Fonction estPalindrome
+      function estPalindrome(mot) {
+        let motMinuscule = mot.toLowerCase();
+        // motMinuscule = radar => ["r", "a", "d", "a", "r"] => ["r", "a", "d", "a", "r"] => radar
+        let motInverse = motMinuscule.split("").reverse().join("");
+        return motMinuscule === motInverse;
+      }
+
+      let operation;
+      do {
+        operation = parseInt(
+          prompt(
+            " Quelle souhaitez-vous effectuer : \n \t 1 - Calculer la moyennes des notes \n \t 2 - Vérifier si un mot est un palindrome \n\n NB: Entrer un nombre correspondant a l'opération souhaitée"
+          )
+        );
+      } while (operation !== 1 && operation !== 2);
+
+      switch (operation) {
+        case 1:
+          let moyenne = calculMoyenne();
+          alert("La moyenne des notes est : " + moyenne);
+          console.log("La moyenne des notes est : " + moyenne);
+          break;
+
+        case 2:
+          let mot = prompt(
+            "Entrez un mot pour vérifier s'il est un palindrome"
+          );
+          if (estPalindrome(mot)) {
+            alert(mot + " est un palindrome");
+            console.log(mot + " est un palindrome");
+          } else {
+            alert(mot + " n'est pas un palindrome");
+            console.log(mot + " n'est pas un palindrome");
+          }
+          break;
+
+        default:
+          alert("Opération non reconnue");
+          console.log("Opération non reconnue");
+          break;
+      }
     </script>
-
-</body>
+  </body>
 </html>

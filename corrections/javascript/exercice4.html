@@ -1,52 +1,82 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercice 4</title>
   </head>
   <body>
     <script>
-      // 1. Calculer la moyenne
-      function calculerMoyenne(notes) {
-        if (notes.length === 0) return 0;
+      //  1. Fonction calculMoyenne
+      function calculMoyenne() {
+        let note,
+          coef,
+          somCoef = 0,
+          somProd = 0,
+          moy,
+          nbreNote;
 
-        let somme = 0;
-        for (let note of notes) {
-          somme += note;
+        do {
+          nbreNote = parseInt(
+            prompt("Combien de notes avez en votre disposition")
+          );
+        } while (nbreNote <= 0);
+
+        for (let i = 1; i <= nbreNote; i++) {
+          note = parseFloat(prompt("Entrez la note " + i));
+          coef = parseFloat(prompt("Entrez le coefficient de la note " + i));
+
+          somCoef += coef;
+          somProd += note * coef;
         }
-        return somme / notes.length;
+
+        moy = somProd / somCoef;
+
+        return moy;
       }
 
-      // Test
-      let mesNotes = [15, 12, 18, 14, 16];
-      console.log(`Moyenne: ${calculerMoyenne(mesNotes)}`); // 15
-
-      // 2. Vérifier palindrome
+      //   2. Fonction estPalindrome
       function estPalindrome(mot) {
         let motMinuscule = mot.toLowerCase();
+        // motMinuscule = radar => ["r", "a", "d", "a", "r"] => ["r", "a", "d", "a", "r"] => radar
         let motInverse = motMinuscule.split("").reverse().join("");
         return motMinuscule === motInverse;
       }
 
-      // Test
-      console.log(estPalindrome("radar")); // true
-      console.log(estPalindrome("hello")); // false
+      let operation;
+      do {
+        operation = parseInt(
+          prompt(
+            " Quelle souhaitez-vous effectuer : \n \t 1 - Calculer la moyennes des notes \n \t 2 - Vérifier si un mot est un palindrome \n\n NB: Entrer un nombre correspondant a l'opération souhaitée"
+          )
+        );
+      } while (operation !== 1 && operation !== 2);
 
-      // 3. Générer mot de passe
-      function genererMotDePasse(longueur) {
-        const caracteres =
-          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-        let motDePasse = "";
+      switch (operation) {
+        case 1:
+          let moyenne = calculMoyenne();
+          alert("La moyenne des notes est : " + moyenne);
+          console.log("La moyenne des notes est : " + moyenne);
+          break;
 
-        for (let i = 0; i < longueur; i++) {
-          let indexAleatoire = Math.floor(Math.random() * caracteres.length);
-          motDePasse += caracteres[indexAleatoire];
-        }
+        case 2:
+          let mot = prompt(
+            "Entrez un mot pour vérifier s'il est un palindrome"
+          );
+          if (estPalindrome(mot)) {
+            alert(mot + " est un palindrome");
+            console.log(mot + " est un palindrome");
+          } else {
+            alert(mot + " n'est pas un palindrome");
+            console.log(mot + " n'est pas un palindrome");
+          }
+          break;
 
-        return motDePasse;
+        default:
+          alert("Opération non reconnue");
+          console.log("Opération non reconnue");
+          break;
       }
-
-      // Test
-      console.log(genererMotDePasse(12)); // Ex: "aB3#kL9@mN2!"
     </script>
   </body>
 </html>
