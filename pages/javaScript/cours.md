@@ -604,14 +604,37 @@ calculatrice.additionner(10).multiplier(2).soustraire(5).afficher(); // Résulta
 ```
 
 ---
+layout: center
+class: text-center
+---
 
-## 9. Manipulation du DOM
+# Partie 4
+## DOM et Événements
 
-### Qu'est-ce que le DOM ?
-**Le DOM (Document Object Model)** est une interface de programmation qui représente la structure d'un document HTML/XML sous forme d'arbre d'objets. Chaque élément HTML devient un nœud dans cet arbre.
+<div class="text-6xl text-green-500 mb-8">
+  <carbon-cursor-1 />
+</div>
+
+Maîtriser la manipulation du DOM et la gestion des événements
 
 
 ---
+
+## 1. Introduction au DOM
+
+### Qu'est-ce que le DOM ?
+
+Le **DOM (Document Object Model)** est une interface de programmation qui représente la structure d'un document HTML/XML sous forme d'arbre d'objets. Chaque élément HTML devient un **nœud** dans cet arbre.
+
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; max-height: 60px;">
+
+  <img src="../../images/cours/diagram.svg" height="10" size="100"/>
+</div>
+
+
+---
+
+### Structure Arborescente
 
 ```html
 <!DOCTYPE html>
@@ -626,45 +649,215 @@ calculatrice.additionner(10).multiplier(2).soustraire(5).afficher(); // Résulta
 </html>
 ```
 
-### Sélection d'éléments
+### Types de Nœuds
 
 ```javascript
-// Sélection par ID
-let titre = document.getElementById("monTitre");
-
-// Sélection par classe
-let elements = document.getElementsByClassName("maClasse");
-let premierElement = document.querySelector(".maClasse");
-let tousElements = document.querySelectorAll(".maClasse");
-
-// Sélection par balise
-let paragraphes = document.getElementsByTagName("p");
-
-// Sélecteurs CSS avancés
-let lien = document.querySelector("a[href^='https']");
-let dernierLi = document.querySelector("ul li:last-child");
+// Types de nœuds principaux
+Node.ELEMENT_NODE        // 1 - Élément HTML (div, p, etc.)
+Node.TEXT_NODE          // 3 - Contenu textuel
+Node.COMMENT_NODE       // 8 - Commentaires HTML
+Node.DOCUMENT_NODE      // 9 - Document entier
 ```
 
 ---
+
+## 2. Structure et Navigation du DOM
+
+### Propriétés de Navigation
+
+```javascript
+// Navigation vers les parents
+element.parentNode          // Nœud parent direct
+element.parentElement       // Élément parent (null si parent n'est pas un élément)
+
+// Navigation vers les enfants
+element.childNodes          // Tous les nœuds enfants (inclut texte et commentaires)
+element.children            // Seulement les éléments enfants
+element.firstChild          // Premier nœud enfant
+element.lastChild           // Dernier nœud enfant
+element.firstElementChild   // Premier élément enfant
+element.lastElementChild    // Dernier élément enfant
+
+// Navigation vers les frères et sœurs
+element.nextSibling         // Nœud frère suivant
+element.previousSibling     // Nœud frère précédent
+element.nextElementSibling  // Élément frère suivant
+element.previousElementSibling // Élément frère précédent
+```
+
+---
+
+### Exemple Pratique de Navigation
+
+```html
+<div id="container">
+  <h2>Titre</h2>
+  <p>Premier paragraphe</p>
+  <p>Deuxième paragraphe</p>
+  <ul>
+    <li>Élément 1</li>
+    <li>Élément 2</li>
+  </ul>
+</div>
+```
+
+```javascript
+const container = document.getElementById('container');
+
+// Accéder aux enfants
+console.log(container.children.length); // 4 (h2, p, p, ul)
+console.log(container.firstElementChild.tagName); // "H2"
+
+// Navigation
+const firstP = container.children[1]; // Premier <p>
+const secondP = firstP.nextElementSibling; // Deuxième <p>
+const ul = secondP.nextElementSibling; // <ul>
+
+// Remonter vers le parent
+console.log(firstP.parentElement.id); // "container"
+```
+
+
+
+---
+
+## 3. Sélection d'Éléments
+
+### Méthodes de Sélection Classiques
+
+```javascript
+// Par ID (retourne 1 élément ou null)
+const element = document.getElementById('monId');
+
+// Par nom de balise (retourne HTMLCollection)
+const paragraphes = document.getElementsByTagName('p');
+
+// Par classe CSS (retourne HTMLCollection)
+const elements = document.getElementsByClassName('maClasse');
+
+// Par nom d'attribut name (retourne NodeList)
+const inputs = document.getElementsByName('username');
+```
+
+### Méthodes de Sélection Modernes (Recommandées)
+
+```javascript
+// Sélecteur CSS - Premier élément correspondant
+const element = document.querySelector('#monId');
+const firstP = document.querySelector('p');
+const elementWithClass = document.querySelector('.maClasse');
+
+// Sélecteur CSS - Tous les éléments correspondants
+const allP = document.querySelectorAll('p');
+const allWithClass = document.querySelectorAll('.maClasse');
+const complexe = document.querySelectorAll('div.container > p:first-child');
+```
+
+
+---
+
+## 4. Manipulation du DOM
 
 ### Modification du contenu
 
 ```javascript
 // Modification du texte
 let titre = document.getElementById("titre");
-titre.textContent = "Nouveau titre";
-titre.innerHTML = "<strong>Titre en gras</strong>";
 
-// Modification des attributs
-let image = document.querySelector("img");
-image.src = "nouvelle-image.jpg";
-image.alt = "Description de la nouvelle image";
-image.setAttribute("data-id", "123");
+titre.textContent = "Nouveau titre"; // Sécurisé, échappe le HTML
+tritre.innerText = "Nouveau Titre";
+titre.innerHTML = "<strong>Titre en gras</strong>"; // Respecte le CSS (visibility, display)
 
-// Modification du style
-titre.style.color = "blue";
-titre.style.fontSize = "24px";
-titre.style.backgroundColor = "#f0f0f0";
+// Exemple sécurisé pour innerHTML
+function setSecureHTML(element, html) {
+    // Création d'un élément temporaire pour nettoyer
+    const temp = document.createElement('div');
+    temp.textContent = html; // Échappe automatiquement
+    element.innerHTML = temp.innerHTML;
+}
+
+
+```
+
+---
+
+### Modification des Attributs
+
+```javascript
+const img = document.querySelector('img');
+
+// Lecture d'attributs
+const src = img.getAttribute('src');
+const alt = img.alt; // Propriété directe
+
+// Modification d'attributs
+img.setAttribute('src', 'nouvelle-image.jpg');
+img.src = "nouvelle-image.jpg"; // Propriete directe
+img.alt = "Nouvelle description"; // Propriété directe
+
+// Suppression d'attributs
+img.removeAttribute('title');
+
+// Vérification d'existence
+if (img.hasAttribute('data-id')) {
+    console.log("L'attribut data-id existe");
+}
+
+// Attributs data-*
+img.dataset.userId = "123"; // Équivaut à data-user-id="123"
+console.log(img.dataset.userId); // "123"
+```
+
+---
+
+### Manipulation des Classes CSS
+
+```javascript
+const element = document.querySelector('.monElement');
+
+// Ajouter une classe
+element.classList.add('nouvelle-classe');
+element.classList.add('classe1', 'classe2', 'classe3');
+
+// Supprimer une classe
+element.classList.remove('ancienne-classe');
+
+// Basculer une classe (toggle)
+element.classList.toggle('active'); // Ajoute si absente, supprime si présente
+
+// Vérifier la présence d'une classe
+if (element.classList.contains('active')) {
+    console.log("L'élément a la classe active");
+}
+
+// Remplacer une classe
+element.classList.replace('ancienne', 'nouvelle');
+```
+
+---
+
+### Modification des Styles CSS
+
+```javascript
+const element = document.querySelector('#monElement');
+
+// Style inline direct
+element.style.color = 'red';
+element.style.backgroundColor = 'blue'; // Notez le camelCase
+element.style.fontSize = '18px';
+
+// Propriétés CSS avec tirets (utiliser camelCase ou setProperty)
+element.style.borderRadius = '10px';
+element.style.setProperty('border-radius', '10px'); // Alternative
+
+// Lire les styles calculés
+const computedStyle = window.getComputedStyle(element);
+console.log(computedStyle.color); // Couleur calculée finale
+console.log(computedStyle.getPropertyValue('font-size'));
+
+// Supprimer un style
+element.style.color = ''; // Supprime la propriété
+element.style.removeProperty('background-color');
 ```
 
 ---
@@ -691,53 +884,89 @@ if (element.classList.contains("active")) {
 
 ---
 
-### Création et suppression d'éléments
+### Création et Insertion d'Éléments
 
 ```javascript
 // Créer un nouvel élément
-let nouveauParagraphe = document.createElement("p");
-nouveauParagraphe.textContent = "Nouveau paragraphe";
-nouveauParagraphe.className = "nouveau";
+const newDiv = document.createElement('div');
+const newP = document.createElement('p');
 
-// Ajouter l'élément au DOM
-let conteneur = document.getElementById("conteneur");
-conteneur.appendChild(nouveauParagraphe);
+// Configurer l'élément
+newDiv.className = 'nouvelle-div';
+newDiv.id = 'monNouveauDiv';
+newP.textContent = 'Nouveau paragraphe';
+newP.style.color = 'green';
 
-// Insérer avant un autre élément
-let premierP = conteneur.querySelector("p");
-conteneur.insertBefore(nouveauParagraphe, premierP);
+// Méthodes d'insertion
+const container = document.querySelector('#container');
 
-// Supprimer un élément
-let elementASupprimer = document.querySelector(".aSupprimer");
-elementASupprimer.remove(); // Méthode moderne
-// ou elementASupprimer.parentNode.removeChild(elementASupprimer); // Ancienne méthode
+// Ajouter à la fin
+container.appendChild(newDiv);
 
-// Remplacer un élément
-let ancienElement = document.querySelector(".ancien");
-let nouveauElement = document.createElement("div");
-nouveauElement.textContent = "Nouvel élément";
-ancienElement.parentNode.replaceChild(nouveauElement, ancienElement);
+// Insérer avant un élément spécifique
+const referenceElement = container.querySelector('p');
+container.insertBefore(newP, referenceElement);
+
+// Méthodes modernes d'insertion
+container.prepend(newDiv);           // Au début
+container.append(newP);              // À la fin
+referenceElement.before(newDiv);     // Avant l'élément de référence
+referenceElement.after(newP);        // Après l'élément de référence
+
+// Insertion avec HTML (attention sécurité)
+container.insertAdjacentHTML('beforeend', '<span>Nouveau span</span>');
 ```
 
 ---
 
-### Navigation dans le DOM
+### Suppression d'Éléments
 
 ```javascript
-let element = document.querySelector("#monElement");
+const elementToRemove = document.querySelector('.a-supprimer');
 
-// Navigation
-let parent = element.parentElement;
-let enfants = element.children;
-let premierEnfant = element.firstElementChild;
-let dernierEnfant = element.lastElementChild;
-let suivant = element.nextElementSibling;
-let precedent = element.previousElementSibling;
+// Méthode moderne (recommandée)
+elementToRemove.remove();
 
-// Parcourir tous les enfants
-for (let enfant of element.children) {
-    console.log(enfant.tagName);
+// Ancienne méthode (encore utilisée)
+elementToRemove.parentNode.removeChild(elementToRemove);
+
+// Supprimer tous les enfants
+const parent = document.querySelector('#parent');
+while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
 }
+// ou plus moderne
+parent.replaceChildren(); // Supprime tous les enfants
+```
+
+---
+
+## 5. Gestion des Événements
+
+### Ajout d'Écouteurs d'Événements
+
+```javascript
+const button = document.querySelector('#monBouton');
+
+// Méthode recommandée - addEventListener
+button.addEventListener('click', function(event) {
+    console.log('Bouton cliqué!');
+    console.log('Élément cliqué:', event.target);
+});
+
+// Avec fonction fléchée
+button.addEventListener('click', (event) => {
+    console.log('Clic avec fonction fléchée');
+});
+
+// Fonction nommée (facilite la suppression)
+function handleClick(event) {
+    console.log('Fonction nommée');
+}
+button.addEventListener('click', handleClick);
+
+// Suppression d'écouteur
+button.removeEventListener('click', handleClick);
 ```
 
 ---

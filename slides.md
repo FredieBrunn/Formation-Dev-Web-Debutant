@@ -306,20 +306,6 @@ js/
 
 **Temps alloué : 3 heures**
 
----
-layout: center
-class: text-center
----
-
-# Partie 4
-## DOM et Événements
-
-<div class="text-6xl text-green-500 mb-8">
-  <carbon-cursor-1 />
-</div>
-
-Maîtriser la manipulation du DOM et la gestion des événements
-
 
 ---
 layout: two-cols
