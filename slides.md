@@ -178,9 +178,8 @@ Créer un dashboard d'administration responsive avec CSS Grid et Flexbox
 
 **Temps alloué : 1h30**
 
----
 
-# 2.9 Correction TP Dashboard
+<!-- # 2.9 Correction TP Dashboard
 
 ## 💡 Solution Dashboard Responsive
 
@@ -191,7 +190,7 @@ le code va inclure:
 - Widgets de statistiques en CSS Grid
 - Tableau responsive avec scroll
 - Animations CSS avancées
-- Media queries complètes
+- Media queries complètes -->
 
 ---
 layout: center
@@ -382,8 +381,6 @@ Créer un dashboard d'analytics interactif avec DOM manipulation avancée
 - **Heat map** : Données géographiques
 - **Progress indicators** : Objectifs et progression
 
-**Temps alloué : 4 heures**
-
 ---
 layout: center
 class: text-center
@@ -480,43 +477,6 @@ elearning-platform/
 - **Services** : API, stockage, authentification
 - **Utils** : Fonctions utilitaires réutilisables
 
----
-
-# Critères d'Évaluation
-
-## 📊 Grille de Notation (100 points)
-
-### HTML5 Sémantique (20 points)
-- ✅ Structure sémantique correcte
-- ✅ Accessibilité (ARIA, alt, navigation)
-- ✅ Formulaires avec validation native
-- ✅ Métadonnées et SEO
-
-### CSS3 Responsive (25 points)
-- ✅ Design mobile-first
-- ✅ Flexbox et Grid Layout
-- ✅ Animations et transitions fluides
-- ✅ Cohérence visuelle et UX
-- ✅ Performance (pas de layout thrashing)
-
-### JavaScript ES6+ (30 points)
-- ✅ Classes et héritage
-- ✅ Modules bien organisés
-- ✅ Async/await et promises
-- ✅ Gestion d'erreurs robuste
-- ✅ Code propre et commenté
-
-### DOM et Événements (15 points)
-- ✅ Manipulation DOM efficace
-- ✅ Délégation d'événements
-- ✅ Gestion d'état avancée
-- ✅ Performance (pas de fuites mémoire)
-
-### Intégration et Finition (10 points)
-- ✅ Fonctionnalités complètes
-- ✅ Tests et debugging
-- ✅ Documentation
-- ✅ Présentation professionnelle
 
 ---
 
@@ -532,51 +492,23 @@ elearning-platform/
 ### CSS3 & Responsive
 - [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [Can I Use](https://caniuse.com/) - Compatibilité navigateurs
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; ">
+
+  <a href="/pages/css3/Propriétés CSS.pdf" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Propiétés CSS 
+  </a>
+</div>
 
 ### JavaScript ES6+
 - [ES6 Features](https://github.com/lukehoban/es6features)
 - [JavaScript.info](https://javascript.info/) - Guide complet
-- [MDN JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+<div class="correction-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; ">
 
-### Outils Utiles
-- [Validator W3C](https://validator.w3.org/) - Validation HTML
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Audit qualité
-- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - API de test
+  <a href="/pages/javaScript/Guide des Fonctions JavaScript Essentielles.pdf" download class="btn-download-html" style="padding: 0.5em 1em; background: #059669; color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: 0.5em;">
+    <span>📥</span> Guide des Fonctions JavaScript Essentielles 
+  </a>
+</div>
 
----
-
-# Planning et Organisation
-
-## ⏰ Échéancier (5 jours)
-
-### Jour 1 : Fondations
-- **Matin** : Structure HTML et navigation
-- **Après-midi** : CSS de base et responsive
-
-### Jour 2 : Authentification
-- **Matin** : Formulaires et validation
-- **Après-midi** : Gestion utilisateurs
-
-### Jour 3 : Catalogue de Cours
-- **Matin** : Liste et recherche
-- **Après-midi** : Détails et interactions
-
-### Jour 4 : Fonctionnalités Avancées
-- **Matin** : Progression et statistiques
-- **Après-midi** : Administration
-
-### Jour 5 : Finalisation
-- **Matin** : Tests et debugging
-- **Après-midi** : Documentation et présentation
-
-## 🤝 Méthodologie de Travail
-
-1. **Planification** : Définir les priorités
-2. **Développement itératif** : Feature par feature
-3. **Tests réguliers** : Validation continue
-4. **Refactoring** : Amélioration du code
-5. **Documentation** : Au fur et à mesure
 
 ---
 layout: center
@@ -614,8 +546,8 @@ class: text-center
 
 ### Prochaines étapes recommandées :
 **Frameworks Frontend** : React, Angular  
-**Backend** : Node.js, APIs REST  
-**Bases de données** : MongoDB, PostgreSQL  
+**Backend** : Spring-boot, Laravel 
+**Bases de données** : MongoDB, PostgreSQL, MySQL  
 **DevOps** : Git, CI/CD, déploiement
 
 ---
@@ -634,5 +566,5 @@ class: text-center
 </div>
 
 <div class="pt-8 text-sm opacity-75">
-  Formation complète - Bases du Développement Web 2025
+  Formation complète - Bases du Développement Web 2025 - UNITECHS
 </div>

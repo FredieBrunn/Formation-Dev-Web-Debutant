@@ -971,6 +971,86 @@ button.removeEventListener('click', handleClick);
 
 ---
 
+### Objet Event et ses Propriétés
+
+```javascript
+element.addEventListener('click', function(event) {
+    // Propriétés essentielles de l'objet event
+    console.log('Type d\'événement:', event.type);        // "click"
+    console.log('Élément cible:', event.target);          // Élément qui a déclenché l'événement
+    console.log('Élément écouteur:', event.currentTarget); // Élément qui écoute l'événement
+    
+    // Position de la souris
+    console.log('Position X:', event.clientX);
+    console.log('Position Y:', event.clientY);
+    
+    // Touches spéciales
+    console.log('Ctrl enfoncé:', event.ctrlKey);
+    console.log('Shift enfoncé:', event.shiftKey);
+    console.log('Alt enfoncé:', event.altKey);
+    
+    // Contrôle du comportement
+    event.preventDefault();  // Empêche l'action par défaut
+    event.stopPropagation(); // Empêche la propagation (bubbling)
+});
+```
+
+### Délégation d'Événements
+
+```javascript
+// Très utile pour les éléments dynamiques
+const liste = document.querySelector('#maListe');
+
+// Au lieu d'ajouter un écouteur sur chaque <li>
+liste.addEventListener('click', function(event) {
+    // Vérifier si l'élément cliqué est bien un <li>
+    if (event.target.tagName === 'LI') {
+        console.log('Item cliqué:', event.target.textContent);
+        event.target.style.backgroundColor = 'yellow';
+    }
+});
+
+// Maintenant, même les <li> ajoutés dynamiquement auront l'événement
+const newLi = document.createElement('li');
+newLi.textContent = 'Nouvel élément';
+liste.appendChild(newLi); // L'événement click fonctionnera automatiquement
+```
+
+---
+
+### Événements Courants
+
+```javascript
+// Événements de souris
+element.addEventListener('click', handler);      // Clic
+element.addEventListener('dblclick', handler);   // Double-clic
+element.addEventListener('mousedown', handler);  // Bouton enfoncé
+element.addEventListener('mouseup', handler);    // Bouton relâché
+element.addEventListener('mouseover', handler);  // Souris entre
+element.addEventListener('mouseout', handler);   // Souris sort
+element.addEventListener('mousemove', handler);  // Souris bouge
+
+// Événements de clavier
+element.addEventListener('keydown', handler);    // Touche enfoncée
+element.addEventListener('keyup', handler);      // Touche relâchée
+element.addEventListener('keypress', handler);   // Touche pressée (déprécié)
+
+// Événements de formulaire
+form.addEventListener('submit', handler);        // Soumission
+input.addEventListener('change', handler);       // Changement de valeur
+input.addEventListener('input', handler);        // Saisie en temps réel
+input.addEventListener('focus', handler);        // Élément reçoit le focus
+input.addEventListener('blur', handler);         // Élément perd le focus
+
+// Événements de fenêtre
+window.addEventListener('load', handler);        // Page entièrement chargée
+window.addEventListener('DOMContentLoaded', handler); // DOM prêt
+window.addEventListener('resize', handler);      // Redimensionnement
+window.addEventListener('scroll', handler);      // Défilement
+```
+
+---
+
 ### **Exercice 7 : Manipulation DOM**
 Créez une page avec :
 1. Un bouton qui change la couleur de fond aléatoirement
@@ -981,3 +1061,355 @@ Créez une page avec :
 <br>
 
 **Correction Exercice 7 :**
+
+```
+
+```
+
+---
+
+## 6. Formulaires en Détail
+
+### Structure HTML d'un Formulaire
+
+```html
+<form id="monFormulaire" action="/submit" method="POST">
+    <!-- Input text -->
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" required>
+    
+    <!-- Input email avec validation -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <!-- Input password -->
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password" minlength="6" required>
+    
+    <!-- Select -->
+    <label for="pays">Pays:</label>
+    <select id="pays" name="pays" required>
+        <option value="">-- Choisir un pays --</option>
+        <option value="fr">France</option>
+        <option value="be">Belgique</option>
+        <option value="ca">Canada</option>
+    </select>
+    
+    <!-- Radio buttons -->
+    <fieldset>
+        <legend>Genre:</legend>
+        <input type="radio" id="homme" name="genre" value="homme">
+        <label for="homme">Homme</label>
+        
+        <input type="radio" id="femme" name="genre" value="femme">
+        <label for="femme">Femme</label>
+    </fieldset>
+    
+    <!-- Checkboxes -->
+    <fieldset>
+        <legend>Intérêts:</legend>
+        <input type="checkbox" id="sport" name="interets" value="sport">
+        <label for="sport">Sport</label>
+        
+        <input type="checkbox" id="musique" name="interets" value="musique">
+        <label for="musique">Musique</label>
+        
+        <input type="checkbox" id="lecture" name="interets" value="lecture">
+        <label for="lecture">Lecture</label>
+    </fieldset>
+    
+    <!-- Textarea -->
+    <label for="commentaire">Commentaire:</label>
+    <textarea id="commentaire" name="commentaire" rows="4" cols="50"></textarea>
+    
+    <!-- Boutons -->
+    <button type="submit">Envoyer</button>
+    <button type="reset">Réinitialiser</button>
+    <button type="button" onclick="previewForm()">Aperçu</button>
+</form>
+```
+
+---
+
+### Accès aux Éléments de Formulaire
+
+```javascript
+// Accéder au formulaire
+const form = document.getElementById('monFormulaire');
+const form2 = document.forms['monFormulaire']; // Alternative
+const form3 = document.forms[0]; // Premier formulaire de la page
+
+// Accéder aux champs par différentes méthodes
+const nomField = document.getElementById('nom');
+const emailField = form.elements['email'];
+const passwordField = form.elements.password;
+const paysField = form.querySelector('#pays');
+
+// Accéder à tous les éléments du formulaire
+console.log(form.elements); // HTMLFormControlsCollection de tous les champs
+console.log(form.elements.length); // Nombre de champs
+
+// Itérer sur tous les éléments
+for (let i = 0; i < form.elements.length; i++) {
+    const element = form.elements[i];
+    console.log(`${element.name}: ${element.value}`);
+}
+```
+
+---
+
+### Récupération des Valeurs
+
+```javascript
+function getFormValues() {
+    // Valeurs simples
+    const nom = document.getElementById('nom').value;
+    const email = document.getElementById('email').value;
+    const commentaire = document.getElementById('commentaire').value;
+    
+    // Select
+    const paysSelect = document.getElementById('pays');
+    const pays = paysSelect.value;
+    const paysText = paysSelect.options[paysSelect.selectedIndex].text;
+    
+    // Radio button
+    const genreRadios = document.querySelectorAll('input[name="genre"]');
+    let genre = '';
+    for (let radio of genreRadios) {
+        if (radio.checked) {
+            genre = radio.value;
+            break;
+        }
+    }
+    // Méthode plus concise pour radio
+    const genreChecked = document.querySelector('input[name="genre"]:checked');
+    const genreValue = genreChecked ? genreChecked.value : '';
+    
+    // Checkboxes
+    const interetsCheckboxes = document.querySelectorAll('input[name="interets"]:checked');
+    const interets = Array.from(interetsCheckboxes).map(cb => cb.value);
+    
+    return {
+        nom,
+        email,
+        pays,
+        paysText,
+        genre: genreValue,
+        interets,
+        commentaire
+    };
+}
+
+// Utilisation avec FormData (moderne)
+function getFormDataValues(form) {
+    const formData = new FormData(form);
+    const values = {};
+    
+    // Pour les champs simples
+    for (let [key, value] of formData.entries()) {
+        if (values[key]) {
+            // Si la clé existe déjà, créer un tableau (cas des checkboxes)
+            if (!Array.isArray(values[key])) {
+                values[key] = [values[key]];
+            }
+            values[key].push(value);
+        } else {
+            values[key] = value;
+        }
+    }
+    
+    return values;
+}
+```
+
+---
+
+### Validation de Formulaire
+
+```javascript
+// Validation HTML5 native
+function validateForm() {
+    const form = document.getElementById('monFormulaire');
+    
+    // Vérifier la validité globale du formulaire
+    if (!form.checkValidity()) {
+        // Afficher les messages d'erreur natifs
+        form.reportValidity();
+        return false;
+    }
+    
+    return true;
+}
+
+// Validation personnalisée
+function customValidation() {
+    const nom = document.getElementById('nom');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    let isValid = true;
+    
+    // Validation du nom
+    if (nom.value.trim().length < 2) {
+        setFieldError(nom, 'Le nom doit contenir au moins 2 caractères');
+        isValid = false;
+    } else {
+        clearFieldError(nom);
+    }
+    
+    // Validation de l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        setFieldError(email, 'Format d\'email invalide');
+        isValid = false;
+    } else {
+        clearFieldError(email);
+    }
+    
+    // Validation du mot de passe
+    if (password.value.length < 6) {
+        setFieldError(password, 'Le mot de passe doit contenir au moins 6 caractères');
+        isValid = false;
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password.value)) {
+        setFieldError(password, 'Le mot de passe doit contenir au moins une minuscule, une majuscule et un chiffre');
+        isValid = false;
+    } else {
+        clearFieldError(password);
+    }
+    
+    return isValid;
+}
+
+// Fonctions utilitaires pour l'affichage d'erreurs
+function setFieldError(field, message) {
+    // Supprimer l'ancien message d'erreur
+    clearFieldError(field);
+    
+    // Ajouter la classe d'erreur
+    field.classList.add('error');
+    
+    // Créer le message d'erreur
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    errorDiv.id = `error-${field.id}`;
+    
+    // Insérer après le champ
+    field.parentNode.insertBefore(errorDiv, field.nextSibling);
+}
+
+function clearFieldError(field) {
+    field.classList.remove('error');
+    const errorMsg = document.getElementById(`error-${field.id}`);
+    if (errorMsg) {
+        errorMsg.remove();
+    }
+}
+```
+
+---
+
+### Gestion de la Soumission
+
+```javascript
+document.getElementById('monFormulaire').addEventListener('submit', function(event) {
+    // Empêcher l'envoi par défaut
+    event.preventDefault();
+    
+    // Valider le formulaire
+    if (!customValidation()) {
+        console.log('Formulaire invalide');
+        return;
+    }
+    
+    // Récupérer les données
+    const formData = getFormValues();
+    console.log('Données du formulaire:', formData);
+    
+    // Traiter les données (envoi AJAX, etc.)
+    submitFormData(formData);
+});
+
+// Envoi des données en AJAX
+async function submitFormData(data) {
+    try {
+        // Afficher un indicateur de chargement
+        showLoadingIndicator();
+        
+        const response = await fetch('/api/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            showSuccessMessage('Formulaire envoyé avec succès!');
+            resetForm();
+        } else {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Erreur lors de l\'envoi:', error);
+        showErrorMessage('Erreur lors de l\'envoi du formulaire');
+    } finally {
+        hideLoadingIndicator();
+    }
+}
+
+// Fonctions utilitaires
+function showLoadingIndicator() {
+    const submitButton = document.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Envoi en cours...';
+}
+
+function hideLoadingIndicator() {
+    const submitButton = document.querySelector('button[type="submit"]');
+    submitButton.disabled = false;
+    submitButton.textContent = 'Envoyer';
+}
+
+function resetForm() {
+    const form = document.getElementById('monFormulaire');
+    form.reset();
+    // Supprimer les messages d'erreur
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => msg.remove());
+    const errorFields = document.querySelectorAll('.error');
+    errorFields.forEach(field => field.classList.remove('error'));
+}
+
+function showSuccessMessage(message) {
+    // Implementation de l'affichage du message de succès
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'success-message';
+    messageDiv.textContent = message;
+    document.body.insertBefore(messageDiv, document.body.firstChild);
+    
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
+}
+
+function showErrorMessage(message) {
+    // Implementation de l'affichage du message d'erreur
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'error-message-global';
+    messageDiv.textContent = message;
+    document.body.insertBefore(messageDiv, document.body.firstChild);
+    
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
+}
+```
+
+---
+
+## Exercice 8: Formulaire de Contact Simple
+
+**Énoncé:** Créez un formulaire de contact avec nom, email, sujet(Demande d'informations, support technique, question commerciale, Autres) et message. Ajoutez une validation en temps réel et une soumission simulée.
+
+**NB:** Tous les champs du formulaire sont obligatoire.

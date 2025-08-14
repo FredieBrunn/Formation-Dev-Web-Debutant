@@ -62,6 +62,3 @@ src: ./pages/module8.md
 src: ./pages/projet.md
 ---
 
----
-layout: end
----

@@ -3,80 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercice 4</title>
+    <title>Application</title>
   </head>
   <body>
+    <div id="container">
+      <h2>Hello UNITECHS</h2>
+      <br /><br />
+      <p>Mon paragraphe</p>
+    </div>
+
+    <button id="monbutton">Click</button>
+
     <script>
-      //  1. Fonction calculMoyenne
-      function calculMoyenne() {
-        let note,
-          coef,
-          somCoef = 0,
-          somProd = 0,
-          moy,
-          nbreNote;
+      const button = document.querySelector("#monbutton");
 
-        do {
-          nbreNote = parseInt(
-            prompt("Combien de notes avez en votre disposition")
-          );
-        } while (nbreNote <= 0);
+      // Méthode recommandée - addEventListener
+      button.addEventListener("mouseover", function (event) {
 
-        for (let i = 1; i <= nbreNote; i++) {
-          note = parseFloat(prompt("Entrez la note " + i));
-          coef = parseFloat(prompt("Entrez le coefficient de la note " + i));
+        console.log('Élément cliqué:', event.textContent);
+        //  Creer un nouvel element
+        const newDiv = document.createElement("div");
+        const newP = document.createElement("p");
 
-          somCoef += coef;
-          somProd += note * coef;
-        }
+        // Configuration des elements
+        //  Div
+        newDiv.className = "newDiv";
+        newDiv.id = "maDiv";
+        newDiv.style.backgroundColor = "blue";
+        newDiv.style.color = "white";
+        newDiv.style.padding = "10px";
+        newDiv.style.height = "30px";
+        newDiv.style.margin = "10px 0";
+        newDiv.style.maxWidth = "300px";
+        newDiv.style.borderRadius = "5px";
 
-        moy = somProd / somCoef;
+        //  Paragraphe
+        newP.textContent = "Ceci est un nouveau paragraphe.";
+        newP.style.fontSize = "16px";
+        newP.style.color = "green";
 
-        return moy;
-      }
+        // Ajout des elements au DOM
+        const container = document.querySelector("#container");
+        const divP = document.createElement("p");
 
-      //   2. Fonction estPalindrome
-      function estPalindrome(mot) {
-        let motMinuscule = mot.toLowerCase();
-        // motMinuscule = radar => ["r", "a", "d", "a", "r"] => ["r", "a", "d", "a", "r"] => radar
-        let motInverse = motMinuscule.split("").reverse().join("");
-        return motMinuscule === motInverse;
-      }
+        //  Paragraphe de la DIV
+        divP.textContent = "Bonjour tous le Monde.";
+        divP.style.fontSize = "16px";
+        newDiv.appendChild(divP);
+        container.appendChild(newDiv);
 
-      let operation;
-      do {
-        operation = parseInt(
-          prompt(
-            " Quelle souhaitez-vous effectuer : \n \t 1 - Calculer la moyennes des notes \n \t 2 - Vérifier si un mot est un palindrome \n\n NB: Entrer un nombre correspondant a l'opération souhaitée"
-          )
-        );
-      } while (operation !== 1 && operation !== 2);
-
-      switch (operation) {
-        case 1:
-          let moyenne = calculMoyenne();
-          alert("La moyenne des notes est : " + moyenne);
-          console.log("La moyenne des notes est : " + moyenne);
-          break;
-
-        case 2:
-          let mot = prompt(
-            "Entrez un mot pour vérifier s'il est un palindrome"
-          );
-          if (estPalindrome(mot)) {
-            alert(mot + " est un palindrome");
-            console.log(mot + " est un palindrome");
-          } else {
-            alert(mot + " n'est pas un palindrome");
-            console.log(mot + " n'est pas un palindrome");
-          }
-          break;
-
-        default:
-          alert("Opération non reconnue");
-          console.log("Opération non reconnue");
-          break;
-      }
+        const p = container.querySelector("p");
+        container.insertBefore(newP, p);
+      });
     </script>
   </body>
 </html>

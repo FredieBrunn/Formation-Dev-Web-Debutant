@@ -1,80 +1,68 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercice 5</title>
   </head>
   <body>
     <script>
-      // 1. Gestionnaire de liste de courses
+      //  1. Gestion des donnees dans un tableau
+
       let listeCourses = [];
 
       function ajouterArticle(article) {
         if (!listeCourses.includes(article)) {
           listeCourses.push(article);
-          console.log(`"${article}" ajouté à la liste.`);
+          console.log("Article ajouté : " + article);
         } else {
-          console.log(`"${article}" est déjà dans la liste.`);
+          console.log("L'article est déjà dans la liste : " + article);
         }
       }
 
-      function supprimerArticle(article) {
+      function supprimerArticle (article) {
         let index = listeCourses.indexOf(article);
         if (index !== -1) {
           listeCourses.splice(index, 1);
-          console.log(`"${article}" supprimé de la liste.`);
+          console.log("Article supprimé : " + article);
         } else {
-          console.log(`"${article}" n'est pas dans la liste.`);
+          console.log("L'article n'est pas dans la liste : " + article);
         }
+      } 
+
+      function afficherListe(tab){
+        console.log("==== Listes des Courses  =====");
+        for (let i = 0; i <tab.length; i++) {
+          console.log((i+1)+" - "+ tab[i]);
+          // console.log(`${i+1} -   ${listeCourses[i]}`);
+        }
+
+        // For pour les tableau
+        // let i = 0;
+        // for( let article of listeCourses){
+        //   console.log((i+1)+" - "+article);
+        //   i++;
+        // }
       }
 
-      function afficherListe() {
-        console.log("=== Liste de courses ===");
-        if (listeCourses.length === 0) {
-          console.log("La liste est vide.");
-        } else {
-          listeCourses.forEach((article, index) => {
-            console.log(`${index + 1}. ${article}`);
-          });
-        }
+      function trierNoms(tabNoms) {
+        return tabNoms.sort((a,b) => a.localeCompare(b));  // Trie Insertion
+        // return tabNoms.sort(); //Trie par ordre decroissant
       }
 
       // Test
-      ajouterArticle("Pain");
-      ajouterArticle("Lait");
-      ajouterArticle("Œufs");
-      afficherListe();
-      supprimerArticle("Lait");
-      afficherListe();
-
-      // 2. Tri de noms
-      function trierNoms(noms) {
-        return noms.slice().sort(); // slice() pour ne pas modifier l'original
-      }
-
-      let noms = ["Marie", "Pierre", "Alice", "Bob"];
-      let nomsTries = trierNoms(noms);
-      console.log("Noms triés:", nomsTries);
-
-      // 3. Trouver les doublons
-      function trouverDoublons(tableau) {
-        let doublons = [];
-        let vus = {};
-
-        for (let element of tableau) {
-          if (vus[element]) {
-            if (!doublons.includes(element)) {
-              doublons.push(element);
-            }
-          } else {
-            vus[element] = true;
-          }
-        }
-
-        return doublons;
-      }
-
-      let tableauAvecDoublons = [1, 2, 3, 2, 4, 3, 5, 1];
-      console.log("Doublons:", trouverDoublons(tableauAvecDoublons)); // [2, 3, 1]
+      ajouterArticle("Pommes");
+      ajouterArticle("Bananes");
+      ajouterArticle("Oranges");
+      afficherListe(listeCourses);
+      supprimerArticle("Bananes");
+      afficherListe(listeCourses);
+      ajouterArticle("ananas");
+      afficherListe(listeCourses);
+      afficherListe(trierNoms(listeCourses));
+      let article = prompt("Entrez un article à ajouter :");
+      ajouterArticle(article);
+      afficherListe(listeCourses);
     </script>
   </body>
 </html>
